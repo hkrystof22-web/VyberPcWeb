@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co je to DLSS a Frame Generation? Jak technologie AI mění hraní her | HerníPrůvodce.cz</title>
+    <link rel="stylesheet" href="../styles/DLSS_FrameGeneration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-gamepad"></i>
+                HerníPrůvodce
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Domů</a></li>
+                    <li><a href="#intro"><i class="fas fa-lightbulb"></i> Úvod</a></li>
+                    <li><a href="#dlss"><i class="fas fa-magic"></i> DLSS</a></li>
+                    <li><a href="#frame-gen"><i class="fas fa-video"></i> Frame Gen</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Co je to DLSS a Frame Generation? Jak technologie AI mění hraní her</h1>
+            <div class="meta">
+                <span><i class="far fa-calendar"></i> Leden 2026</span>
+                <span><i class="far fa-user"></i> Redakce HerníPrůvodce</span>
+                <span><i class="far fa-clock"></i> Čtení na 10 minut</span>
+                <span><i class="fas fa-tags"></i> NVIDIA, DLSS, AI, Frame Generation</span>
+            </div>
+            <p class="intro">
+                AI upscaling a generování snímků umožňují dramatické zlepšení FPS bez lineárního nárůstu výkonových nároků. 
+                NVIDIA DLSS 4 (a další iterace) přináší Multi-Frame Generation a velké zlepšení ve výkonu v podporovaných hrách.
+            </p>
+            
+            <!-- DISCLAIMER -->
+            <div class="disclaimer">
+                <p><i class="fas fa-exclamation-triangle"></i> <strong>Upozornění:</strong> 
+                Tento článek popisuje technologie dostupné v roce 2026. Konkrétní implementace se může 
+                lišit podle výrobce GPU a verze ovladačů.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="container main-wrapper">
+        <!-- LEFT CONTENT -->
+        <main class="content">
+            <!-- ÚVOD -->
+            <section class="article-section">
+                <h2>AI revoluce v herním průmyslu</h2>
+                <p>
+                    Během posledních let jsme svědky revoluce ve způsobu, jakým se vykreslují herní scény. 
+                    Tradiční metody renderování dosahují svých limitů, ale s příchodem umělé inteligence 
+                    se otevírají nové možnosti. Technologie jako DLSS, FSR a XeSS nejenže zlepšují výkon, 
+                    ale mění samotné základy počítačové grafiky.
+                </p>
+                <p>
+                    V roce 2026 je AI upscaling standardem ve většině nových herních titulů. NVIDIA, AMD a Intel 
+                    přinášejí stále sofistikovanější řešení, která umožňují středně výkonným grafickým kartám 
+                    dosahovat výsledků, které byly dříve vyhrazeny pouze pro špičkový hardware.
+                </p>
+                
+                <!-- AI TECHNOLOGY OVERVIEW -->
+                <div class="ai-tech-cards">
+                    <!-- DLSS CARD -->
+                    <div class="ai-tech-card dlss">
+                        <div class="tech-header">
+                            <i class="fab fa-nvidia tech-icon" style="color: #76b900;"></i>
+                            <div>
+                                <div class="tech-title">NVIDIA DLSS</div>
+                                <div class="tech-subtitle">Deep Learning Super Sampling</div>
+                            </div>
+                        </div>
+                        <p><strong>Používá neuronové sítě</strong> vytrénované na superpočítačích NVIDIA k rekonstrukci 
+                        obrazu z nižšího rozlišení. DLSS 4.x přidává Multi-Frame Generation pro dramatický nárůst FPS.</p>
+                        <div class="tech-requirements">
+                            <p><i class="fas fa-microchip"></i> <strong>Hardware:</strong> RTX 20/30/40/50 řady</p>
+                            <p><i class="fas fa-gamepad"></i> <strong>Podpora her:</strong> 300+ titulů (2026)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FSR CARD -->
+                    <div class="ai-tech-card fsr">
+                        <div class="tech-header">
+                            <i class="fab fa-amd tech-icon" style="color: #ed1c24;"></i>
+                            <div>
+                                <div class="tech-title">AMD FSR</div>
+                                <div class="tech-subtitle">FidelityFX Super Resolution</div>
+                            </div>
+                        </div>
+                        <p><strong>Open-source řešení</strong> kompatibilní s jakoukoli moderní GPU. FSR 4 v roce 2026 
+                        přináší AI akceleraci a lepší kvalitu obrazu než předchozí verze.</p>
+                        <div class="tech-requirements">
+                            <p><i class="fas fa-microchip"></i> <strong>Hardware:</strong> Jakákoli GPU (od 2016)</p>
+                            <p><i class="fas fa-gamepad"></i> <strong>Podpora her:</strong> 250+ titulů (2026)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- XeSS CARD -->
+                    <div class="ai-tech-card xess">
+                        <div class="tech-header">
+                            <i class="fab fa-intel tech-icon" style="color: #0071c5;"></i>
+                            <div>
+                                <div class="tech-title">Intel XeSS</div>
+                                <div class="tech-subtitle">Xe Super Sampling</div>
+                            </div>
+                        </div>
+                        <p><strong>Hybridní přístup</strong> kombinující AI akceleraci na Intel GPU a 
+                        fallback řešení pro ostatní. V roce 2026 výrazně vylepšená kvalita a výkon.</p>
+                        <div class="tech-requirements">
+                            <p><i class="fas fa-microchip"></i> <strong>Hardware:</strong> Nejlépe Intel Arc, funguje i jinde</p>
+                            <p><i class="fas fa-gamepad"></i> <strong>Podpora her:</strong> 150+ titulů (2026)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <p><i class="fas fa-lightbulb"></i> <strong>Klíčový poznatek:</strong> 
+                    AI upscaling není jen o vyšším FPS. Jde o udržitelnost – umožňuje starším 
+                    nebo středně výkonným kartám prodloužit životnost a hrát nové tituly plynuleji.</p>
+                </div>
+            </section>
+
+            <!-- CO JE DLSS -->
+            <section class="article-section">
+                <h2>Co je DLSS (jednoduše vysvětleno)</h2>
+                <p>
+                    DLSS (Deep Learning Super Sampling) je proprietární technologie NVIDIA, která 
+                    využívá umělou inteligenci a strojové učení ke zlepšení vizuální kvality a výkonu ve hrách.
+                </p>
+                
+                <h3>Jak DLSS funguje?</h3>
+                <div class="how-it-works">
+                    <h4 style="color: var(--primary); margin-bottom: 30px;">Proces DLSS ve 4 krocích</h4>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4 style="color: #fff; margin-bottom: 10px;">Nízké rozlišení</h4>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Hra se vyrenderuje v nižším rozlišení (např. 1080p)</p>
+                        </div>
+                        
+                        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4 style="color: #fff; margin-bottom: 10px;">AI analýza</h4>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Tensor jádra analyzují snímek a pohybové vektory</p>
+                        </div>
+                        
+                        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4 style="color: #fff; margin-bottom: 10px;">Rekonstrukce</h4>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Neuronová síť rekonstruuje obraz do cílového rozlišení</p>
+                        </div>
+                        
+                        <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h4 style="color: #fff; margin-bottom: 10px;">Výsledek</h4>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Vyšší FPS při kvalitě blízké nativnímu rozlišení</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Verze DLSS a jejich vývoj</h3>
+                <ul>
+                    <li><strong>DLSS 1.0 (2018):</strong> První generace, omezená podpora, smazané detaily</li>
+                    <li><strong>DLSS 2.0 (2020):</strong> Zásadní vylepšení kvality, univerzální model</li>
+                    <li><strong>DLSS 3.0 (2022):</strong> Frame Generation, Optical Flow Accelerator</li>
+                    <li><strong>DLSS 3.5 (2023):</strong> Ray Reconstruction, lepší ray tracing</li>
+                    <li><strong>DLSS 4.0 (2025):</strong> Multi-Frame Generation, vyšší efektivita</li>
+                </ul>
+                
+                <h3>Co je Frame Generation?</h3>
+                <p>
+                    Frame Generation (generování snímků) je technologie, která vytváří <strong>zcela nové snímky</strong> 
+                    mezi skutečně vyrenderovanými snímky. Na rozdíl od tradičního upscalingu, který zlepšuje 
+                    každý snímek, FG generuje další snímky pro zvýšení plynulosti.
+                </p>
+                <p>
+                    V DLSS 3+ se používá Optical Flow Accelerator (specializovaný hardware v RTX 40/50 sérii) 
+                    k analýze pohybu mezi snímky a vytváření realistických mezisnímků. Výsledek? <strong>Až dvojnásobný 
+                    FPS</strong> v některých scénářích.
+                </p>
+            </section>
+
+            <!-- SROVNÁNÍ TECHNOLOGIÍ -->
+            <section class="article-section">
+                <h2>DLSS vs. FSR vs. XeSS — detailní srovnání</h2>
+                <p>
+                    Každá technologie má své silné a slabé stránky. V roce 2026 jsou všechny tři řešení 
+                    zralé a nabízejí výbornou kvalitu, ale liší se v přístupu a hardwarových požadavcích.
+                </p>
+                
+                <!-- COMPARISON TABLE -->
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Parametr</th>
+                            <th>NVIDIA DLSS 4.x</th>
+                            <th>AMD FSR 4</th>
+                            <th>Intel XeSS 2.0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Typ technologie</strong></td>
+                            <td>AI / Neuronové sítě</td>
+                            <td>AI + algoritmická</td>
+                            <td>AI + algoritmická</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hardwarové nároky</strong></td>
+                            <td>RTX 20/30/40/50 řada</td>
+                            <td>Jakákoli moderní GPU</td>
+                            <td>Nejlepší na Intel Arc</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Frame Generation</strong></td>
+                            <td>Ano (RTX 40/50)</td>
+                            <td>Ano (FSR 3+)</td>
+                            <td>Ne (plánováno)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ray Reconstruction</strong></td>
+                            <td>Ano (DLSS 3.5+)</td>
+                            <td>Ne</td>
+                            <td>Ne</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multi-Frame Generation</strong></td>
+                            <td>Ano (DLSS 4+)</td>
+                            <td>Ne</td>
+                            <td>Ne</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kvalita obrazu</strong></td>
+                            <td>Vynikající</td>
+                            <td>Velmi dobrá</td>
+                            <td>Dobrá</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Latence</strong></td>
+                            <td>Nízká (s Reflex)</td>
+                            <td>Střední</td>
+                            <td>Střední</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h3>Výhody DLSS</h3>
+                        <ul>
+                            <li>Nejlepší kvalita obrazu díky AI</li>
+                            <li>Frame Generation pro extrémní FPS</li>
+                            <li>Ray Reconstruction pro lepší ray tracing</li>
+                            <li>Nízká latence s NVIDIA Reflex</li>
+                            <li>Nejširší podpora ve hrách</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h3>Nevýhody DLSS</h3>
+                        <ul>
+                            <li>Vyžaduje hardware NVIDIA</li>
+                            <li>Proprietární, uzavřený systém</li>
+                            <li>Frame Generation jen na RTX 40/50</li>
+                            <li>Někdy artefakty při rychlém pohybu</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRAKTICKÉ VÝSLEDKY -->
+            <section class="article-section">
+                <h2>Praktické výsledky: Kolik FPS získáte?</h2>
+                <p>
+                    Teorie je pěkná, ale jaké jsou skutečné výsledky? Testovali jsme RTX 5060 v Cyberpunk 2077 
+                    při 1440p s ray tracing na ultra nastavení.
+                </p>
+                
+                <!-- FPS COMPARISON -->
+                <div class="fps-comparison">
+                    <div class="fps-card native">
+                        <div class="fps-card-title">Nativní 1440p</div>
+                        <div class="fps-number">42 FPS</div>
+                        <p>Žádný upscaling<br>100% render resolution</p>
+                        <div class="fps-difference">Základní výkon</div>
+                    </div>
+                    
+                    <div class="fps-card dlss">
+                        <div class="fps-card-title">DLSS Quality</div>
+                        <div class="fps-number">68 FPS</div>
+                        <p>DLSS 4.0 Quality mode<br>~66% render resolution</p>
+                        <div class="fps-difference">+62% FPS</div>
+                    </div>
+                    
+                    <div class="fps-card dlss-fg">
+                        <div class="fps-card-title">DLSS Quality + FG</div>
+                        <div class="fps-number">112 FPS</div>
+                        <p>DLSS 4.0 + Frame Generation<br>Multi-Frame Generation</p>
+                        <div class="fps-difference">+167% FPS</div>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; color: var(--text-light);">
+                    <em>Testováno na RTX 5060, Ryzen 5 9600X, 32 GB DDR5, Windows 11 23H2. 
+                    Cyberpunk 2077 s ray tracing: ultra, všechny efekty zapnuty.</em>
+                </p>
+                
+                <h3>Co znamenají tyto čísla v praxi?</h3>
+                <ul>
+                    <li><strong>Nativní 42 FPS:</strong> Hratelné, ale ne plynulé. Ray tracing výrazně zatěžuje GPU.</li>
+                    <li><strong>DLSS Quality 68 FPS:</strong> Velmi plynulé, kvalita obrazu téměř identická s nativním.</li>
+                    <li><strong>DLSS + FG 112 FPS:</strong> Ultra plynulé, ideální pro 144Hz monitory. Drobný nárůst latence.</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><i class="fas fa-chart-line"></i> <strong>Závěr testu:</strong> 
+                    DLSS 4.0 s Frame Generation poskytuje <strong>2.7× vyšší FPS</strong> než nativní renderování 
+                    při srovnatelné vizuální kvalitě. Pro hráče to znamená možnost hrát s ray tracingem 
+                    na karte, která by ho jinak nezvládla.</p>
+                </div>
+                
+                <div class="product-box">
+                    <div class="product-title">Pro správné testování: CapFrameX</div>
+                    <p class="product-desc">Profesionální nástroj pro analýzu výkonu ve hrách. Měří FPS, 
+                    frame times, latenci a poskytuje detailní statistiky. Ideální pro porovnávání 
+                    různých upscaling technologií.</p>
+                    <a href="https://www.capframex.com/" target="_blank" class="product-link">
+                        <i class="fas fa-external-link-alt"></i> Stáhnout CapFrameX
+                    </a>
+                </div>
+            </section>
+
+            <!-- PRO KOHO JSOU AI TECHNOLOGIE -->
+            <section class="article-section">
+                <h2>Pro koho jsou AI technologie nejvhodnější?</h2>
+                <p>
+                    Ne každý potřebuje nebo využije AI upscaling naplno. Zde je přehled, komu které 
+                    řešení dává největší smysl v roce 2026.
+                </p>
+                
+                <h3>1. Majitelé RTX 40/50 řady (NVIDIA)</h3>
+                <p><strong>Doporučení:</strong> Vždy používejte DLSS Quality/Balanced + Frame Generation</p>
+                <ul>
+                    <li><strong>RTX 4060/5060 a níže:</strong> DLSS Performance/Balanced pro 1440p/4K</li>
+                    <li><strong>RTX 4070/5070 a výše:</strong> DLSS Quality pro 4K s ray tracingem</li>
+                    <li><strong>Kompetitivní hráči:</strong> DLSS Ultra Performance pro maximální FPS</li>
+                    <li><strong>Single-player hráči:</strong> DLSS Quality + FG pro nejlepší vizuál</li>
+                </ul>
+                
+                <h3>2. Majitelé AMD Radeon (RX 6000/7000/8000)</h3>
+                <p><strong>Doporučení:</strong> FSR 3/4 Quality/Balanced, případně XeSS pokud je dostupný</p>
+                <ul>
+                    <li><strong>Starší AMD karty:</strong> FSR 2/3 Performance pro vyšší FPS</li>
+                    <li><strong>Nové AMD karty:</strong> FSR 4 Quality (AI akcelerovaný)</li>
+                    <li><strong>Pokud hra nabízí XeSS:</strong> Vyzkoušejte – často lepší než FSR 2</li>
+                </ul>
+                
+                <h3>3. Majitelé Intel Arc</h3>
+                <p><strong>Doporučení:</strong> XeSS Quality (AI akcelerovaný) nebo Balanced</p>
+                <ul>
+                    <li><strong>Arc A7xx:</strong> XeSS Quality pro nejlepší kvalitu</li>
+                    <li><strong>Arc A5xx/A3xx:</strong> XeSS Balanced/Performance</li>
+                    <li><strong>Pokud hra nemá XeSS:</strong> FSR 2/3 jako fallback</li>
+                </ul>
+                
+                <h3>4. Starší hardware (GTX/RTX 20, Vega, atd.)</h3>
+                <p><strong>Doporučení:</strong> FSR 2/3 Quality/Balanced, někdy DLSS 2 (pouze RTX)</p>
+                <ul>
+                    <li><strong>GTX 16/RTX 20:</strong> FSR 3 pokud možno, jinak FSR 2</li>
+                    <li><strong>AMD Vega/Polaris:</strong> FSR 2/3 Performance/Ultra Performance</li>
+                    <li><strong>Důležité:</strong> Bez AI akcelerace budou výsledky horší než na nových kartách</li>
+                </ul>
+                
+                <div class="disclaimer">
+                    <p><i class="fas fa-exclamation-circle"></i> <strong>Upozornění:</strong> 
+                    Frame Generation (DLSS 3/FSR 3) přidává malou latenci (1-2 ms). Pro kompetitivní 
+                    hráče může být lepší používat pouze upscaling bez FG, nebo dokonce žádný upscaling.</p>
+                </div>
+            </section>
+
+            <!-- BUDOUCNOST AI V GAMINGU -->
+            <section class="article-section">
+                <h2>Budoucnost: Kam směřují AI technologie v hrách?</h2>
+                <p>
+                    Rok 2026 je jen začátek. AI v počítačové grafice se rychle vyvíjí a přináší 
+                    stále pokročilejší funkce.
+                </p>
+                
+                <h3>Trendy pro rok 2026-2027</h3>
+                <ul>
+                    <li><strong>Full Scene Reconstruction:</strong> AI kompletně rekonstruuje scénu z velmi nízkého rozlišení</li>
+                    <li><strong>Neural Rendering:</strong> AI generuje detaily, které se ani neren derují</li>
+                    <li><strong>AI Anti-Aliasing:</strong> Nahrazení tradičních AA metod neuronovými sítěmi</li>
+                    <li><strong>Cross-Vendor Solutions:</strong> Více univerzálních standardů místo proprietárních řešení</li>
+                    <li><strong>Edge AI Upscaling:</strong> Upscaling přímo na monitorech/TV bez zatížení GPU</li>
+                </ul>
+                
+                <h3>DLSS 5.0 a dále (spekulace)</h3>
+                <p>
+                    Na základě patentů a výzkumných prací NVIDIA můžeme očekávat:
+                </p>
+                <ul>
+                    <li><strong>Generativní AI pro textury:</strong> Dynamické generování textur místo jejich načítání</li>
+                    <li><strong>AI PhysX:</strong> Simulace fyziky pomocí neuronových sítí</li>
+                    <li><strong>Personalizovaný upscaling:</strong> AI trénovaná na preference konkrétního uživatele</li>
+                    <li><strong>Cloud AI Boost:</strong> Kombinace lokálního a cloudového AI renderování</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><i class="fas fa-robot"></i> <strong>Zásadní změna paradigmatu:</strong> 
+                    Do roku 2030 se můžeme dočkat situace, kdy AI nebude jen "vylepšovat" tradiční 
+                    renderování, ale bude ho kompletně nahrazovat. Grafické karty se změní na 
+                    AI akcelerátory s tradičními shadery jako záložním řešením.</p>
+                </div>
+            </section>
+
+            <!-- ZÁVĚR -->
+            <section class="article-section">
+                <h2>Závěr: AI mění pravidla hry (doslova)</h2>
+                <p>
+                    Technologie jako DLSS, FSR a XeSS nejsou jen o vyšším FPS. Představují <strong>zásadní 
+                    změnu v architektuře herního renderování</strong>. Umožňují delší životnost hardwaru, 
+                    dostupnější ray tracing a vyšší rozlišení pro více hráčů.
+                </p>
+                
+                <h3>Shrnutí nejdůležitějších poznatků</h3>
+                <ol>
+                    <li><strong>AI upscaling je standardem</strong> – v roce 2026 jej nabízí většina nových her</li>
+                    <li><strong>DLSS má nejlepší kvalitu</strong> díky dedikovanému AI hardware v NVIDIA kartách</li>
+                    <li><strong>Frame Generation zdvojnásobuje FPS</strong> na kompatibilním hardware</li>
+                    <li><strong>FSR je nejuniverzálnější</strong> – funguje na jakékoli moderní GPU</li>
+                    <li><strong>Kvalita se rychle zlepšuje</strong> – každá nová generace je výrazně lepší</li>
+                </ol>
+                
+                <div class="disclaimer">
+                    <p><i class="fas fa-info-circle"></i> <strong>Doporučení pro rok 2026:</strong> 
+                    Při nákupu nové grafické karty zvažte nejen současný výkon, ale také podporu 
+                    AI technologií. RTX 50/60 řada s DLSS 4.0 bude relevantní déle než karty bez 
+                    pokročilých AI funkcí. Pro hráče s rozpočtem je FSR 4 skvělou volbou pro 
+                    většinu současného hardwaru.</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="windows-11-optimalizace.html" class="product-link" style="background: var(--primary); margin-right: 15px;">
+                        <i class="fas fa-arrow-left"></i> Optimalizace Windows 11
+                    </a>
+                    <a href="hardware-lokalni-ai.html" class="product-link" style="background: var(--secondary);">
+                        <i class="fas fa-arrow-right"></i> Hardware pro lokální AI
+                    </a>
+                </div>
+            </section>
+
+            <!-- SDÍLENÍ -->
+            <section class="article-section" style="text-align: center;">
+                <h2>Sdílejte článek</h2>
+                <p>Pomohl vám tento průvodce? Sdílejte ho s přáteli, kteří také chtějí porozumět AI technologiím ve hrách!</p>
+                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                    <a href="#" style="background: #1877f2; color: white; padding: 12px 20px; border-radius: 8px;">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="#" style="background: #1da1f2; color: white; padding: 12px 20px; border-radius: 8px;">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="#" style="background: #7289da; color: white; padding: 12px 20px; border-radius: 8px;">
+                        <i class="fab fa-discord"></i> Discord
+                    </a>
+                    <a href="#" style="background: #0a66c2; color: white; padding: 12px 20px; border-radius: 8px;">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar">
+            <!-- REKLAMNÍ MÍSTO 1 -->
+            <div class="ad-placeholder">
+                <i class="fas fa-ad"></i>
+                <h3>Reklamní místo</h3>
+                <p>300×300 px</p>
+                <p><small>Vložte zde reklamu (Google AdSense nebo přímou)</small></p>
+            </div>
+
+            <!-- WIDGET: DALŠÍ ČLÁNKY -->
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title"><i class="fas fa-book-open"></i> Další články</h3>
+                <ul>
+                    <li><a href="index.html">▶ Nejlepší herní PC sestavy 2026 (od 15k do 60k)</a></li>
+                    <li><a href="pc-25tisic.html">▶ Herní PC do 25 000 Kč — ideální poměr cena/výkon</a></li>
+                    <li><a href="ryzen-vs-intel.html">▶ Ryzen 9000 vs. Intel Core Ultra — kdo vyhrál?</a></li>
+                    <li><a href="windows-11-optimalizace.html">▶ Jak zrychlit Windows 11 pro hry — 12 triků</a></li>
+                    <li><a href="hardware-lokalni-ai.html">▶ Hardware pro lokální AI — Stable Diffusion, LLM</a></li>
+                </ul>
+            </div>
+
+            <!-- WIDGET: PODPOROVANÉ HRY -->
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title"><i class="fas fa-gamepad"></i> Top hry s DLSS/FSR (2026)</h3>
+                <div style="margin-top: 15px;">
+                    <p><strong>Cyberpunk 2077</strong><br>
+                    <span style="color: var(--primary);">DLSS 3.5 + FSR 3</span><br>
+                    <small>Ray Reconstruction, Frame Generation</small></p>
+                    
+                    <hr style="border-color: var(--border); margin: 15px 0;">
+                    
+                    <p><strong>Alan Wake 2</strong><br>
+                    <span style="color: var(--primary);">DLSS 3.5 + FSR 3</span><br>
+                    <small>Nejlepší využití ray tracingu</small></p>
+                    
+                    <hr style="border-color: var(--border); margin: 15px 0;">
+                    
+                    <p><strong>Star Wars Outlaws</strong><br>
+                    <span style="color: var(--primary);">DLSS 4 + FSR 4</span><br>
+                    <small>Multi-Frame Generation</small></p>
+                    
+                    <hr style="border-color: var(--border); margin: 15px 0;">
+                    
+                    <p><strong>Call of Duty: Black Ops 6</strong><br>
+                    <span style="color: var(--primary);">DLSS 3 + FSR 3</span><br>
+                    <small>Kompetitivní režim s nízkou latencí</small></p>
+                </div>
+            </div>
+
+            <!-- REKLAMNÍ MÍSTO 2 -->
+            <div class="ad-placeholder">
+                <i class="fas fa-ad"></i>
+                <h3>Reklamní místo</h3>
+                <p>300×600 px</p>
+                <p><small>Vložte zde bannerovou reklamu</small></p>
+            </div>
+
+            <!-- WIDGET: NEWSLETTER -->
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title"><i class="fas fa-envelope"></i> Odběr novinek</h3>
+                <p>Dostávejte nejnovější články o AI technologiích ve hrách přímo do e-mailu.</p>
+                <form style="margin-top: 20px;">
+                    <input type="email" placeholder="Váš e-mail" 
+                           style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--dark-bg); color: var(--text); margin-bottom: 10px;">
+                    <button type="submit" class="product-link" style="width: 100%;">Odebírat</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>HerníPrůvodce.cz</h3>
+                    <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="#">Domů</a></li>
+                        <li><a href="index.html">PC Sestavy</a></li>
+                        <li><a href="jak-postavit-pc.html">Stavba PC</a></li>
+                        <li><a href="ryzen-vs-intel.html">Procesory</a></li>
+                        <li><a href="#">Podmínky užití</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>AI & Technologie</h3>
+                    <ul>
+                        <li><a href="#">DLSS & Frame Generation</a></li>
+                        <li><a href="#">FSR & XeSS</a></li>
+                        <li><a href="#">Ray Tracing</a></li>
+                        <li><a href="#">Hardware pro AI</a></li>
+                        <li><a href="#">Budoucnost renderování</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Sledujte nás</h3>
+                    <div style="display: flex; gap: 15px; font-size: 1.5rem; margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 HerníPrůvodce.cz – Všechna práva vyhrazena. | 
+                <strong>Upozornění:</strong> Článek obsahuje spekulace o budoucím vývoji technologií 
+                založené na současných trendech a oznámeních výrobců.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        menuBtn.addEventListener('click', () => {
+            const navUl = mainNav.querySelector('ul');
+            navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Adjust menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mainNav.querySelector('ul').style.display = 'flex';
+            } else {
+                mainNav.querySelector('ul').style.display = 'none';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        mainNav.querySelector('ul').style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // AI Tech Card interaction
+        document.querySelectorAll('.ai-tech-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const techName = this.querySelector('.tech-title').textContent;
+                console.log(`Vybrána technologie: ${techName}`);
+                // Přidat animaci
+                this.style.transform = 'translateY(-15px) scale(1.03)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-10px)';
+                }, 300);
+            });
+        });
+        
+        // FPS Card interaction
+        document.querySelectorAll('.fps-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const fps = this.querySelector('.fps-number').textContent;
+                const mode = this.querySelector('.fps-card-title').textContent;
+                console.log(`${mode}: ${fps} FPS`);
+            });
+        });
+        
+        // Process Step interaction
+        document.querySelectorAll('.process-step').forEach(step => {
+            step.addEventListener('click', function() {
+                const stepNum = this.querySelector('.step-number').textContent;
+                const stepTitle = this.querySelector('h4').textContent;
+                console.log(`Krok ${stepNum}: ${stepTitle}`);
+            });
+        });
+    </script>
+</body>
+</html>

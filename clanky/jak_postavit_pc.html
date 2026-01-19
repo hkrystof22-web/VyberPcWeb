@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak postavit herní PC svépomocí — kompletní návod pro začátečníky 2026 | HerníPrůvodce.cz</title>
+    <link rel="stylesheet" href="../styles/jak_postavit_pc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-gamepad"></i>
+                HerníPrůvodce
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Domů</a></li>
+                    <li><a href="#intro"><i class="fas fa-lightbulb"></i> Úvod</a></li>
+                    <li><a href="#steps"><i class="fas fa-list-ol"></i> Kroky</a></li>
+                    <li><a href="#tips"><i class="fas fa-wrench"></i> Tipy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Jak postavit herní PC svépomocí — kompletní návod pro začátečníky 2026</h1>
+            <div class="meta">
+                <span><i class="far fa-calendar"></i> Leden 2026</span>
+                <span><i class="far fa-user"></i> Redakce HerníPrůvodce</span>
+                <span><i class="far fa-clock"></i> Čtení na 10 minut</span>
+                <span><i class="fas fa-tags"></i> Návod, Stavba PC, Hardware</span>
+            </div>
+            <p class="intro">
+                Praktický manuál bez omáčky: příprava, montáž, nastavení BIOSu a nejčastější chyby. 
+                Postavte si své první herní PC bez obav — krok za krokem s fotografiemi a tipy.
+            </p>
+            
+            <!-- DISCLAIMER -->
+            <div class="disclaimer">
+                <p><i class="fas fa-exclamation-triangle"></i> <strong>Upozornění:</strong> 
+                Při práci s hardware vždy dbejte na bezpečnost. Vyhněte se statické elektřině, 
+                pracujte na nevodivém povrchu a před zahájením montáže odpojte PC ze zásuvky.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="container main-wrapper">
+        <!-- LEFT CONTENT -->
+        <main class="content">
+            <!-- ÚVOD -->
+            <section class="article-section">
+                <h2>Proč si postavit PC svépomocí?</h2>
+                <p>
+                    Stavba vlastního PC není jen o ušetření peněz (až 20-30% oproti předpřipraveným sestavám). 
+                    Je to o kontrole nad každou komponentou, možnosti budoucího upgradu a hlubokém pochopení 
+                    toho, jak váš počítač funguje.
+                </p>
+                <p>
+                    V roce 2026 je proces stavby jednodušší než kdy dříve — komponenty jsou standardizované, 
+                    návody dostupné a chyby se dají snadno napravit.
+                </p>
+                
+                <div class="highlight">
+                    <p><i class="fas fa-lightbulb"></i> <strong>První rada:</strong> Nebojte se! Stavba PC je jako 
+                    LEGO pro dospělé. Pokud budete postupovat systematicky a číst návody, zvládne to každý. 
+                    Nejčastější "chyba" začátečníků je spěch.</p>
+                </div>
+            </section>
+
+            <!-- PŘÍPRAVA -->
+            <section class="article-section">
+                <h2>Příprava: Co budete potřebovat</h2>
+                <p>
+                    Předtím než se pustíte do montáže, připravte si správné nářadí a pracovní prostředí.
+                </p>
+                
+                <h3>1. Nástroje a pomůcky</h3>
+                
+                <!-- TOOLS GRID -->
+                <div class="tools-grid">
+                    <!-- TOOL 1 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-screwdriver"></i>
+                        </div>
+                        <div class="tool-name">Křížový šroubovák</div>
+                        <p>PH2 nebo PH1 pro většinu šroubků</p>
+                    </div>
+                    
+                    <!-- TOOL 2 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="tool-name">Antistatický náramek</div>
+                        <p>Chrání komponenty před ESD</p>
+                    </div>
+                    
+                    <!-- TOOL 3 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="tool-name">Dostatek světla</div>
+                        <p>LED lampa nebo dobré osvětlení</p>
+                    </div>
+                    
+                    <!-- TOOL 4 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <div class="tool-name">Organizér šroubků</div>
+                        <p>Malé misky nebo magnetická podložka</p>
+                    </div>
+                    
+                    <!-- TOOL 5 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <div class="tool-name">Kleště na svorky</div>
+                        <p>Pro zip pásky a cable management</p>
+                    </div>
+                    
+                    <!-- TOOL 6 -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-thermometer"></i>
+                        </div>
+                        <div class="tool-name">Tepelná pasta</div>
+                        <p>Kvalitní pasta (Arctic MX-6, Noctua NT-H2)</p>
+                    </div>
+                </div>
+                
+                <h3>2. Pracovní prostor</h3>
+                <ul>
+                    <li><strong>Čistý, suchý povrch:</strong> Dřevěný nebo skleněný stůl (ne koberec!)</li>
+                    <li><strong>Dostatek místa:</strong> Minimálně 1×1 metr volného prostoru</li>
+                    <li><strong>Bez statické elektřiny:</strong> Vyhněte se syntetickým materiálům</li>
+                    <li><strong>Dobré větrání:</strong> Při aplikaci tepelné pasty může být cítit</li>
+                </ul>
+                
+                <div class="warning-box">
+                    <p><i class="fas fa-exclamation-circle"></i> <strong>Varování:</strong> Nikdy nestavte PC na koberci 
+                    nebo v blízkosti domácích mazlíčků. Vlasy a prach mohou způsobit zkrat nebo přehřátí.</p>
+                </div>
+            </section>
+
+            <!-- KOMPATIBILITA KOMPONENT -->
+            <section class="article-section">
+                <h2>Kontrola kompatibility komponent</h2>
+                <p>
+                    Nejčastější chybou začátečníků je nekontrolování kompatibility. Zde je kontrolní seznam 
+                    před zakoupením komponent.
+                </p>
+                
+                <!-- COMPATIBILITY CHECKER -->
+                <div class="compatibility-checker">
+                    <div class="checker-title">Kontrolní seznam kompatibility</div>
+                    <div class="checker-grid">
+                        <div class="check-item">
+                            <p><i class="fas fa-microchip"></i> <strong>CPU vs. základní deska</strong><br>
+                            Socket musí odpovídat (AM5, LGA 1851, atd.)</p>
+                        </div>
+                        
+                        <div class="check-item">
+                            <p><i class="fas fa-memory"></i> <strong>RAM vs. základní deska</strong><br>
+                            DDR5 pro nové platformy, podpora rychlosti</p>
+                        </div>
+                        
+                        <div class="check-item">
+                            <p><i class="fas fa-expand-arrows-alt"></i> <strong>GPU vs. skříň</strong><br>
+                            Délka grafické karty vs. kapacita skříně</p>
+                        </div>
+                        
+                        <div class="check-item">
+                            <p><i class="fas fa-plug"></i> <strong>PSU vs. GPU</strong><br>
+                            Dostatek PCIe konektorů a wattáž</p>
+                        </div>
+                        
+                        <div class="check-item">
+                            <p><i class="fas fa-snowflake"></i> <strong>Chladič vs. skříň</strong><br>
+                            Výška chladiče vs. šířka skříně</p>
+                        </div>
+                        
+                        <div class="check-item">
+                            <p><i class="fas fa-hdd"></i> <strong>SSD vs. základní deska</strong><br>
+                            M.2 sloty, SATA porty, PCIe generace</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-box">
+                    <div class="product-title">Nástroj: PCPartPicker</div>
+                    <p class="product-desc">Před nákupem komponent použijte web PCPartPicker.com. Automaticky 
+                    zkontroluje kompatibilitu, spočítá spotřebu a najde nejlepší ceny.</p>
+                    <a href="https://pcpartpicker.com" target="_blank" class="product-link">
+                        <i class="fas fa-external-link-alt"></i> Otevřít PCPartPicker
+                    </a>
+                </div>
+                
+                <h3>Seznam všech komponent</h3>
+                <table class="components-table">
+                    <thead>
+                        <tr>
+                            <th>Komponenta</th>
+                            <th>Povinné</th>
+                            <th>Doporučené specifikace (2026)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="essential">
+                            <td><strong>Základní deska</strong></td>
+                            <td>Ano</td>
+                            <td>B650 (AM5) nebo B770 (LGA 1851), PCIe 5.0, DDR5</td>
+                        </tr>
+                        <tr class="essential">
+                            <td><strong>Procesor (CPU)</strong></td>
+                            <td>Ano</td>
+                            <td>Ryzen 5 9600X nebo Core Ultra 5, 6+ jader</td>
+                        </tr>
+                        <tr class="essential">
+                            <td><strong>Grafická karta (GPU)</strong></td>
+                            <td>Ano</td>
+                            <td>RTX 5060 nebo RX 8700 XT, 12+ GB VRAM</td>
+                        </tr>
+                        <tr class="essential">
+                            <td><strong>Paměť RAM</strong></td>
+                            <td>Ano</td>
+                            <td>32 GB DDR5 6000MHz CL30 (2×16 GB)</td>
+                        </tr>
+                        <tr class="essential">
+                            <td><strong>SSD disk</strong></td>
+                            <td>Ano</td>
+                            <td>1 TB NVMe PCIe 4.0 (WD Black, Samsung)</td>
+                        </tr>
+                        <tr class="essential">
+                            <td><strong>Zdroj (PSU)</strong></td>
+                            <td>Ano</td>
+                            <td>650W 80+ Gold, plně modulární</td>
+                        </tr>
+                        <tr class="essential">
+                            <td><strong>Skříň</strong></td>
+                            <td>Ano</td>
+                            <td>Mid-tower s dobrým prouděním vzduchu</td>
+                        </tr>
+                        <tr class="optional">
+                            <td><strong>Chladič CPU</strong></td>
+                            <td>Ne*</td>
+                            <td>Výkonný vzduchový nebo 240mm AIO</td>
+                        </tr>
+                        <tr class="optional">
+                            <td><strong>Ventilátory</strong></td>
+                            <td>Ne</td>
+                            <td>2× intake přední, 1× exhaust zadní</td>
+                        </tr>
+                        <tr class="optional">
+                            <td><strong>HDD disk</strong></td>
+                            <td>Ne</td>
+                            <td>2-4 TB pro data, hry na SSD</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="color: var(--text-light); font-size: 0.9rem;">
+                    *Boxový chladič je součástí CPU, ale pro herní použití doporučujeme aftermarket.
+                </p>
+            </section>
+
+            <!-- KROK ZA KROKEM - STAVBA -->
+            <section class="article-section">
+                <h2>Krok za krokem: Kompletní montáž</h2>
+                <p>
+                    Následuje podrobný postup stavby PC. Dělejte vše pomalu a kontrolujte každý krok. 
+                    Průměrná doba stavby: 2-4 hodiny pro začátečníka.
+                </p>
+                
+                <!-- BUILD STEPS -->
+                <div class="build-steps">
+                    <!-- STEP 1 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-cogs step-icon"></i>
+                            Krok 1: Příprava skříně
+                        </div>
+                        <p><strong>Odstraňte boční panel</strong> a všechny nepotřebné přepážky. 
+                        <strong>Namontujte distanční sloupky</strong> podle formátu vaší základní desky 
+                        (ATX, mATX, ITX). Většina skříní má sloupky již předinstalované.</p>
+                        <div class="tip-box">
+                            <p><i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Použijte základní desku jako šablonu 
+                            pro kontrolu pozice distančních sloupků. Každý otvor musí mít pod sebou sloupek.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- STEP 2 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-microchip step-icon"></i>
+                            Krok 2: Instalace procesoru (CPU)
+                        </div>
+                        <p><strong>Otevřete socket</strong> na základní desce (odemkněte páčku). 
+                        <strong>Zarovnejte CPU</strong> podle zlatého trojúhelníku nebo zářezu na procesoru a socketu. 
+                        <strong>Jemně vložte</strong> CPU bez tlaku — pokud sedí správně, zapadne sám. 
+                        <strong>Zavřete socket</strong> a zajistěte páčkou.</p>
+                        <div class="warning-box">
+                            <p><i class="fas fa-exclamation-circle"></i> <strong>NEBOJTE SE:</strong> CPU nelze vložit 
+                            špatně, pokud ho nebudete násilím tlačit proti odporu. Pokud nejde lehce, kontrolujte zarovnání.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- STEP 3 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-temperature-high step-icon"></i>
+                            Krok 3: Aplikace tepelné pasty
+                        </div>
+                        <p><strong>Malé množství stačí!</strong> Velikost hrášku nebo rýžového zrnka uprostřed IHS (kovová část CPU). 
+                        <strong>Nerozmazávejte</strong> prstem — chladič vytvoří rovnoměrnou vrstvu při montáži.</p>
+                        <div class="tip-box">
+                            <p><i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Pokud používáte AIO kapalinové chlazení, 
+                            často má tepelnou pastu již nanesenou. Zkontrolujte ochrannou fólii!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- STEP 4 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-wind step-icon"></i>
+                            Krok 4: Montáž chladiče CPU
+                        </div>
+                        <p><strong>Podle návodu</strong> vašeho chladiče. Většina moderních chladičů používá 
+                        backplate (zadní desku) a čtyři šrouby. <strong>Utahujte křížem</strong> (jako při výměně kola u auta) 
+                        pro rovnoměrný tlak.</p>
+                        <p><strong>Připojte napájení</strong> chladiče k zástrčce CPU_FAN na základní desce.</p>
+                    </div>
+                    
+                    <!-- STEP 5 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-memory step-icon"></i>
+                            Krok 5: Instalace pamětí RAM
+                        </div>
+                        <p><strong>Otevřete západky</strong> na slotech RAM. <strong>Zarovnejte zářez</strong> na paměti se zářezem ve slotu. 
+                        <strong>Rovnoměrně zatlačte</strong> na oba konce dokud západky nezapadnou samy.</p>
+                        <p><strong>Dual-channel:</strong> Pro nejlepší výkon použijte sloty A2 a B2 (druhý a čtvrtý od procesoru).</p>
+                    </div>
+                    
+                    <!-- STEP 6 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-desktop step-icon"></i>
+                            Krok 6: Instalace základní desky do skříně
+                        </div>
+                        <p><strong>Opatrně vložte</strong> základní desku do skříně, zarovnejte otvory s distančními sloupky. 
+                        <strong>Přišroubujte</strong> všechny šrouby (obvykle 6-9 kusů). Netahejte příliš, stačí "finger tight".</p>
+                    </div>
+                    
+                    <!-- STEP 7 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-plug step-icon"></i>
+                            Krok 7: Napájecí kabely základní desky
+                        </div>
+                        <p><strong>24-pinový konektor</strong> (největší) — napájení desky. <strong>8-pinový CPU</strong> 
+                        (obvykle nahoře vlevo) — napájení procesoru. Oba zapojte z PSU.</p>
+                        <div class="tip-box">
+                            <p><i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Tyto kabely jdou zapojit pouze jedním způsobem. 
+                            Pokud nejde, netlačte — otočte konektor.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- STEP 8 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-gamepad step-icon"></i>
+                            Krok 8: Instalace grafické karty (GPU)
+                        </div>
+                        <p><strong>Odstraňte</strong> 2-3 slotové kryty na zadní straně skříně. <strong>Otevřete západku</strong> 
+                        na PCIe slotu (obvykle první dlouhý slot). <strong>Zasuňte GPU</strong> rovně do slotu. 
+                        <strong>Přišroubujte</strong> k skříni. <strong>Připojte napájení</strong> (6+2 pin PCIe).</p>
+                    </div>
+                    
+                    <!-- STEP 9 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-hdd step-icon"></i>
+                            Krok 9: Instalace SSD a HDD
+                        </div>
+                        <p><strong>M.2 SSD:</strong> Odšroubujte stojan, vložte SSD pod úhlem 30°, přišroubujte. 
+                        <strong>2.5" SSD / 3.5" HDD:</strong> Namontujte do držáku ve skříni, připojte SATA kabel k desce a napájení z PSU.</p>
+                    </div>
+                    
+                    <!-- STEP 10 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-fan step-icon"></i>
+                            Krok 10: Ventilátory a cable management
+                        </div>
+                        <p><strong>Namontujte ventilátory:</strong> Přední jako intake (nasávání), zadní/horní jako exhaust (odtah). 
+                        <strong>Cable management:</strong> Ukliďte kabely za základní deskou, použijte zip pásky. 
+                        <strong>Důležité:</strong> Neblokujte proudění vzduchu!</p>
+                    </div>
+                    
+                    <!-- STEP 11 -->
+                    <div class="step">
+                        <div class="step-title">
+                            <i class="fas fa-power-off step-icon"></i>
+                            Krok 11: Připojení předního panelu
+                        </div>
+                        <p><strong>Nejčastější chyba!</strong> Malé konektory pro tlačítko power, reset, LED diody. 
+                        <strong>Konsultujte manuál</strong> základní desky pro správné zapojení. Obvykle do pravého dolního rohu desky.</p>
+                        <div class="tip-box">
+                            <p><i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Pokud si nejste jisti, připojte pouze 
+                            POWER SW (tlačítko zapnutí). Ostatní lze dodělat později.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRVNÍ SPUŠTĚNÍ A BIOS -->
+            <section class="article-section">
+                <h2>První spuštění a nastavení BIOSu</h2>
+                <p>
+                    Teď přichází vzrušující část — první spuštění. Nespěchejte a postupujte systematicky.
+                </p>
+                
+                <h3>POST (Power-On Self Test) kontrola</h3>
+                <ol>
+                    <li><strong>Zapojte monitor</strong> do GPU (ne do základní desky!)</li>
+                    <li><strong>Zapojte klávesnici</strong> a myš</li>
+                    <li><strong>Zapojte napájecí kabel</strong> do PSU a zapněte přepínač na PSU</li>
+                    <li><strong>Stiskněte tlačítko power</strong> na skříni</li>
+                </ol>
+                
+                <div class="warning-box">
+                    <p><i class="fas fa-exclamation-circle"></i> <strong>Co dělat, když se nic nestane:</strong><br>
+                    1. Zkontrolujte, zda je přepínač na PSU zapnutý<br>
+                    2. Zkontrolujte napájení CPU a 24-pinové konektory<br>
+                    3. Zkontrolujte připojení tlačítka POWER SW<br>
+                    4. Zkuste zkratovat PINy pro power na základní desce (viz manuál)</p>
+                </div>
+                
+                <h3>Nastavení BIOSu/UEFI</h3>
+                <p>Po úspěšném POSTu stiskněte <strong>DEL nebo F2</strong> během bootování pro vstup do BIOSu.</p>
+                
+                <table class="components-table">
+                    <thead>
+                        <tr>
+                            <th>Nastavení</th>
+                            <th>Co dělat</th>
+                            <th>Proč je důležité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>XMP/EXPO/DOCP</strong></td>
+                            <td>Povolit profil pro RAM</td>
+                            <td>RAM poběží na plné rychlosti (např. 6000MHz)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Boot order</strong></td>
+                            <td>Nastavit USB jako první</td>
+                            <td>Pro instalaci Windows z USB flash disku</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Secure Boot</strong></td>
+                            <td>Povolit (defaultně)</td>
+                            <td>Bezpečnostní funkce proti malwaru</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TPM 2.0</strong></td>
+                            <td>Povolit</td>
+                            <td>Vyžadováno pro Windows 11</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fan curve</strong></td>
+                            <td>Nastavit podle preferencí</td>
+                            <td>Optimalizace hluku a teplot</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="product-box">
+                    <div class="product-title">Vytvoření bootovacího USB</div>
+                    <p class="product-desc">Před prvním spuštěním si připravte instalační médium. 
+                    Stáhněte Media Creation Tool z Microsoftu a vytvořte bootovací USB s Windows 11.</p>
+                    <a href="https://www.microsoft.com/cs-cz/software-download/windows11" target="_blank" class="product-link">
+                        <i class="fas fa-external-link-alt"></i> Stáhnout Media Creation Tool
+                    </a>
+                </div>
+            </section>
+
+            <!-- NEJČASTĚJŠÍ CHYBY -->
+            <section class="article-section">
+                <h2>Nejčastější chyby a jak se jim vyhnout</h2>
+                <p>
+                    I zkušení stavitelé dělají chyby. Zde je přehled těch nejčastějších a jak je napravit.
+                </p>
+                
+                <h3>1. Zapomenuté napájecí kabely</h3>
+                <p><strong>Příznaky:</strong> PC se nespustí, větráky se netočí, žádná LED dioda.<br>
+                <strong>Řešení:</strong> Zkontrolujte 24-pin (základní deska) a 8-pin (CPU).</p>
+                
+                <h3>2. RAM v nesprávných slotech</h3>
+                <p><strong>Příznaky:</strong> PC startuje, ale pracuje v single-channel nebo nevidí všechny paměti.<br>
+                <strong>Řešení:</strong> Přečtěte si manuál základní desky pro optimální umístění (obvykle A2+B2).</p>
+                
+                <h3>3. Monitor připojen k základní desce místo GPU</h3>
+                <p><strong>Příznaky:</strong> Žádný obraz, i když PC běží.<br>
+                <strong>Řešení:</strong> Připojte monitor k výstupu na grafické kartě (níže v skříni).</p>
+                
+                <h3>4. Zapomenutý I/O štít</h3>
+                <p><strong>Příznaky:</strong> Po montáži desky zjistíte, že chybí kovový štít s porty.<br>
+                <strong>Řešení:</strong> Musíte vyndat desku a vložit štít před instalací.</p>
+                
+                <h3>5. Špatné zapojení předního panelu</h3>
+                <p><strong>Příznaky:</strong> Tlačítko power nefunguje, LED diody nesvítí.<br>
+                <strong>Řešení:</strong> Nejčastější chyba. Detailně prostudujte manuál základní desky.</p>
+                
+                <div class="highlight">
+                    <p><i class="fas fa-history"></i> <strong>Důležitá rada:</strong> Při jakýchkoliv problémech 
+                    nepanikařte. Vypněte PC, odpojte ze zásuvky a postupujte systematicky. 90% problémů je způsobeno 
+                    špatným zapojením kabelů nebo nekompatibilními komponentami.</p>
+                </div>
+            </section>
+
+            <!-- ZÁVĚR -->
+            <section class="article-section">
+                <h2>Závěr: Jste připraveni postavit svůj první PC!</h2>
+                <p>
+                    Gratulujeme! Pokud jste dočetli až sem, máte všechny teoretické znalosti pro úspěšnou stavbu 
+                    herního PC. Pamatujte:
+                </p>
+                
+                <ul>
+                    <li><strong>Nespěchejte</strong> — lépe strávit 4 hodiny a mít fungující PC než 2 hodiny a nefungující</li>
+                    <li><strong>Čtěte návody</strong> — každý chladič, základní deska a skříň má své specifika</li>
+                    <li><strong>Nejdříve testujte</strong> — před montáží do skříně můžete sestavit PC na krabici (test bench)</li>
+                    <li><strong>Požádejte o pomoc</strong> — pokud si nejste jisti, najděte si video s podobnou sestavou</li>
+                    <li><strong>Užijte si to</strong> — stavba PC je zábava a skvělý způsob, jak se naučit nové dovednosti</li>
+                </ul>
+                
+                <div class="disclaimer">
+                    <p><i class="fas fa-info-circle"></i> <strong>Poslední tip:</strong> 
+                    Před prvním zapnutím si pořiďte <strong>zálohový BIOS</strong> (většina desek má tlačítko) a 
+                    vytvořte <strong>bod obnovy systému</strong> po instalaci Windows. Ušetří vám to hodiny práce 
+                    při případných problémech.</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="monitory-144hz-vs-240hz.html" class="product-link" style="background: var(--primary); margin-right: 15px;">
+                        <i class="fas fa-arrow-left"></i> Monitory 144Hz vs 240Hz
+                    </a>
+                    <a href="index.html" class="product-link" style="background: var(--secondary);">
+                        <i class="fas fa-desktop"></i> Přehled PC sestav
+                    </a>
+                </div>
+            </section>
+
+            <!-- SDÍLENÍ -->
+            <section class="article-section" style="text-align: center;">
+                <h2>Sdílejte článek</h2>
+                <p>Líbil se vám tento návod? Sdílejte ho s přáteli, kteří také uvažují o stavbě PC!</p>
+                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                    <a href="#" style="background: #1877f2; color: white; padding: 12px 20px; border-radius: 8px;">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="#" style="background: #1da1f2; color: white; padding: 12px 20px; border-radius: 8px;">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="#" style="background: #25d366; color: white; padding: 12px 20px; border-radius: 8px;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="#" style="background: #7289da; color: white; padding: 12px 20px; border-radius: 8px;">
+                        <i class="fab fa-discord"></i> Discord
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="sidebar">
+            <!-- REKLAMNÍ MÍSTO 1 -->
+            <div class="ad-placeholder">
+                <i class="fas fa-ad"></i>
+                <h3>Reklamní místo</h3>
+                <p>300×300 px</p>
+                <p><small>Vložte zde reklamu (Google AdSense nebo přímou)</small></p>
+            </div>
+
+            <!-- WIDGET: DALŠÍ ČLÁNKY -->
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title"><i class="fas fa-book-open"></i> Další články</h3>
+                <ul>
+                    <li><a href="index.html">▶ Nejlepší herní PC sestavy 2026 (od 15k do 60k)</a></li>
+                    <li><a href="pc-25tisic.html">▶ Herní PC do 25 000 Kč — ideální poměr cena/výkon</a></li>
+                    <li><a href="notebooky-studenti.html">▶ TOP 5 herních notebooků pro studenty</a></li>
+                    <li><a href="monitory-144hz-vs-240hz.html">▶ Srovnání herních monitorů: 144Hz vs. 240Hz</a></li>
+                    <li><a href="ryzen-vs-intel.html">▶ Ryzen 9000 vs. Intel Core Ultra</a></li>
+                </ul>
+            </div>
+
+            <!-- WIDGET: NÁSTROJE A POMŮCKY -->
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title"><i class="fas fa-tools"></i> Nástroje k zakoupení</h3>
+                <div style="margin-top: 15px;">
+                    <p><strong>Antistatický náramek</strong><br>
+                    <span style="color: var(--primary);">od 199 Kč</span><br>
+                    <a href="https://www.alza.cz/antistaticky-naramek" target="_blank" style="font-size: 0.9rem;">Koupit →</a></p>
+                    
+                    <hr style="border-color: var(--border); margin: 15px 0;">
+                    
+                    <p><strong>Šroubovák s nastavitelnou hlavou</strong><br>
+                    <span style="color: var(--primary);">od 299 Kč</span><br>
+                    <a href="https://www.alza.cz/sroubovaky" target="_blank" style="font-size: 0.9rem;">Koupit →</a></p>
+                    
+                    <hr style="border-color: var(--border); margin: 15px 0;">
+                    
+                    <p><strong>Tepelná pasta Arctic MX-6</strong><br>
+                    <span style="color: var(--primary);">od 249 Kč</span><br>
+                    <a href="https://www.alza.cz/tepelna-pasta" target="_blank" style="font-size: 0.9rem;">Koupit →</a></p>
+                </div>
+            </div>
+
+            <!-- REKLAMNÍ MÍSTO 2 -->
+            <div class="ad-placeholder">
+                <i class="fas fa-ad"></i>
+                <h3>Reklamní místo</h3>
+                <p>300×600 px</p>
+                <p><small>Vložte zde bannerovou reklamu</small></p>
+            </div>
+
+            <!-- WIDGET: NEWSLETTER -->
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title"><i class="fas fa-envelope"></i> Odběr novinek</h3>
+                <p>Dostávejte nejnovější návody a tipy pro stavbu PC přímo do e-mailu.</p>
+                <form style="margin-top: 20px;">
+                    <input type="email" placeholder="Váš e-mail" 
+                           style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--dark-bg); color: var(--text); margin-bottom: 10px;">
+                    <button type="submit" class="product-link" style="width: 100%;">Odebírat</button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>HerníPrůvodce.cz</h3>
+                    <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="#">Domů</a></li>
+                        <li><a href="index.html">PC Sestavy</a></li>
+                        <li><a href="monitory-144hz-vs-240hz.html">Monitory</a></li>
+                        <li><a href="ryzen-vs-intel.html">Procesory</a></li>
+                        <li><a href="#">Podmínky užití</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Návody a tipy</h3>
+                    <ul>
+                        <li><a href="#">Stavba PC</a></li>
+                        <li><a href="#">Optimalizace Windows</a></li>
+                        <li><a href="#">Péče o hardware</a></li>
+                        <li><a href="#">Troubleshooting</a></li>
+                        <li><a href="#">Overclocking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Sledujte nás</h3>
+                    <div style="display: flex; gap: 15px; font-size: 1.5rem; margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 HerníPrůvodce.cz – Všechna práva vyhrazena. | 
+                <strong>Upozornění:</strong> Autor nenese odpovědnost za škody způsobené při stavbě PC podle tohoto návodu. 
+                Při práci s elektrickými zařízeními vždy dodržujte bezpečnostní pokyny.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        menuBtn.addEventListener('click', () => {
+            const navUl = mainNav.querySelector('ul');
+            navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Adjust menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mainNav.querySelector('ul').style.display = 'flex';
+            } else {
+                mainNav.querySelector('ul').style.display = 'none';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        mainNav.querySelector('ul').style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Tool card interaction
+        document.querySelectorAll('.tool-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const toolName = this.querySelector('.tool-name').textContent;
+                console.log(`Vybrán nástroj: ${toolName}`);
+            });
+        });
+        
+        // Step interaction
+        document.querySelectorAll('.step').forEach(step => {
+            step.addEventListener('click', function() {
+                const stepTitle = this.querySelector('.step-title').textContent;
+                const stepNumber = this.querySelector('.step-title').textContent.match(/Krok \d+/)[0];
+                console.log(`Kliknuto na: ${stepNumber} - ${stepTitle}`);
+            });
+        });
+        
+        // Compatibility checker items
+        document.querySelectorAll('.check-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const checkText = this.querySelector('strong').textContent;
+                console.log(`Kontrola kompatibility: ${checkText}`);
+            });
+        });
+    </script>
+</body>
+</html>
