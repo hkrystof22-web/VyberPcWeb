@@ -4,231 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookies politika | HerníPrůvodce.cz</title>
+    <meta name="description" content="Podrobná cookies politika webu HerníPrůvodce.cz. Informace o typech cookies, jejich účelu a správě.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="cookies.js" defer></script>
-    <style>/* ===== COOKIES BANNER ===== */
-.cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #1a1a1a;
-    border-top: 3px solid var(--primary);
-    padding: 20px;
-    z-index: 10000;
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.5);
-    border-radius: 15px 15px 0 0;
-}
-
-.cookie-banner.show {
-    transform: translateY(0);
-}
-
-.cookie-content {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.cookie-content h3 {
-    color: var(--primary);
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.cookie-content p {
-    margin-bottom: 15px;
-    color: #ccc;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.cookie-categories {
-    background: #252525;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 15px 0;
-    border: 1px solid #333;
-}
-
-.cookie-category {
-    margin-bottom: 12px;
-    padding: 12px;
-    background: #2a2a2a;
-    border-radius: 6px;
-    border-left: 3px solid var(--secondary);
-}
-
-.cookie-category:last-child {
-    margin-bottom: 0;
-}
-
-.cookie-category input[type="checkbox"] {
-    margin-right: 10px;
-    transform: scale(1.2);
-    accent-color: var(--primary);
-}
-
-.cookie-category label {
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    font-size: 0.95rem;
-}
-
-.cookie-desc {
-    margin: 5px 0 0 25px;
-    color: #999;
-    font-size: 0.85rem;
-}
-
-.cookie-buttons {
-    display: flex;
-    gap: 10px;
-    margin: 15px 0 10px;
-    flex-wrap: wrap;
-}
-
-.cookie-buttons .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-}
-
-.btn-text {
-    background: transparent;
-    color: #ccc;
-    border: 1px solid #555;
-}
-
-.btn-text:hover {
-    background: #333;
-    color: #fff;
-}
-
-.cookie-links {
-    text-align: center;
-    font-size: 0.8rem;
-    color: #777;
-    padding-top: 10px;
-    border-top: 1px solid #333;
-}
-
-.cookie-links a {
-    color: var(--secondary);
-    margin: 0 8px;
-}
-
-/* Tlačítko nastavení */
-.cookie-settings-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: var(--primary);
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 9999;
-    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.4);
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-    border: none;
-}
-
-.cookie-settings-btn:hover {
-    transform: scale(1.1);
-    background: #00d1a9;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .cookie-banner {
-        padding: 15px;
-    }
-    
-    .cookie-buttons {
-        flex-direction: column;
-    }
-    
-    .cookie-buttons .btn {
-        width: 100%;
-    }
-    
-    .cookie-settings-btn {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-    }
-}</style>
 </head>
 <body>
-    <!-- Cookie banner (stejný jako v index.html) -->
-    <div id="cookieBanner" class="cookie-banner">
-        <div class="cookie-content">
-            <h3><i class="fas fa-cookie-bite"></i> Cookies na HerníPrůvodce.cz</h3>
-            <p>Používáme cookies pro lepší zážitek, analýzu návštěvnosti a personalizaci reklam.</p>
-            
-            <div class="cookie-categories">
-                <div class="cookie-category">
-                    <label>
-                        <input type="checkbox" id="cookieNecessary" checked disabled>
-                        <strong>Nezbytné</strong>
-                    </label>
-                    <div class="cookie-desc">Nutné pro fungování webu. Nelze vypnout.</div>
-                </div>
-                
-                <div class="cookie-category">
-                    <label>
-                        <input type="checkbox" id="cookieAnalytics" checked>
-                        <strong>Analytické</strong>
-                    </label>
-                    <div class="cookie-desc">Google Analytics - sledují návštěvnost.</div>
-                </div>
-                
-                <div class="cookie-category">
-                    <label>
-                        <input type="checkbox" id="cookieMarketing" checked>
-                        <strong>Marketingové</strong>
-                    </label>
-                    <div class="cookie-desc">Google AdSense - personalizované reklamy.</div>
-                </div>
-            </div>
-            
-            <div class="cookie-buttons">
-                <button class="btn btn-primary" onclick="acceptAllCookies()">
-                    <i class="fas fa-check-circle"></i> Přijmout vše
-                </button>
-                <button class="btn btn-outline" onclick="saveCookiePreferences()">
-                    <i class="fas fa-cog"></i> Pouze vybrané
-                </button>
-                <button class="btn btn-text" onclick="rejectAllCookies()">
-                    <i class="fas fa-times"></i> Odmítnout vše
-                </button>
-            </div>
-            
-            <div class="cookie-links">
-                <a href="cookies.html">Podrobnosti o cookies</a> • 
-                <a href="ochrana-udaju.html">Ochrana osobních údajů</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cookie settings button -->
-    <button id="cookieSettingsBtn" class="cookie-settings-btn" onclick="showCookieSettings()" title="Nastavení cookies">
-        <i class="fas fa-cookie"></i>
-    </button>
-
-    <!-- Header -->
+    <!-- Cookie banner se načte z cookies.js -->
+    
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -239,147 +22,325 @@
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Domů</a></li>
                     <li><a href="index.html#articles"><i class="fas fa-newspaper"></i> Články</a></li>
+                    <li><a href="cookies.html" class="active"><i class="fas fa-cookie-bite"></i> Cookies</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main content -->
-    <main class="container" style="margin-top: 120px; margin-bottom: 60px; max-width: 800px;">
-        <h1 style="color: var(--primary); margin-bottom: 10px; font-size: 2.2rem;">
+    <main class="container" style="margin-top: 100px; margin-bottom: 60px; max-width: 900px;">
+        <h1 style="color: var(--primary); margin-bottom: 10px; font-size: 2.5rem;">
             <i class="fas fa-cookie-bite"></i> Cookies politika
         </h1>
-        <p style="color: var(--text-light); margin-bottom: 30px; font-size: 0.95rem;">
-            Platná od 2026 | Poslední aktualizace: Leden 2026
-        </p>
         
-        <div class="policy-content">
-            <section style="margin-bottom: 40px;">
-                <h2 style="color: var(--secondary); margin: 25px 0 15px; border-bottom: 2px solid var(--secondary); padding-bottom: 8px;">
-                    <i class="fas fa-info-circle"></i> Co jsou cookies?
-                </h2>
-                <p>Cookies jsou malé textové soubory, které web ukládá do vašeho zařízení (počítače, telefonu, tabletu). Umožňují nám zapamatovat si vaše preference a zlepšit uživatelský zážitek.</p>
-            </section>
-            
-            <section style="margin-bottom: 40px;">
-                <h2 style="color: var(--secondary); margin: 25px 0 15px; border-bottom: 2px solid var(--secondary); padding-bottom: 8px;">
-                    <i class="fas fa-list"></i> Jaké cookies používáme?
-                </h2>
-                
-                <div class="cookie-type" style="background: rgba(0, 184, 148, 0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); margin-bottom: 10px;">
-                        <i class="fas fa-check-circle"></i> 1. Nezbytné cookies
-                    </h3>
-                    <p><strong>Účel:</strong> Zajištění základních funkcí webu (navigace, zabezpečení, session).<br>
-                    <strong>Příklad:</strong> Uchování položek v košíku, přihlášení uživatele.<br>
-                    <strong>Doba uchování:</strong> Po dobu relace nebo dle nastavení prohlížeče.<br>
-                    <strong>Lze vypnout?</strong> <span style="color: #e74c3c;">Ne</span> - web bez nich nebude fungovat.</p>
-                </div>
-                
-                <div class="cookie-type" style="background: rgba(9, 132, 227, 0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid var(--secondary);">
-                    <h3 style="color: var(--secondary); margin-bottom: 10px;">
-                        <i class="fas fa-chart-line"></i> 2. Analytické cookies
-                    </h3>
-                    <p><strong>Účel:</strong> Sledování návštěvnosti a chování uživatelů pro zlepšení webu.<br>
-                    <strong>Příklad:</strong> Google Analytics - kolik lidí navštívilo stránku, odkud přišli.<br>
-                    <strong>Doba uchování:</strong> Až 24 měsíců.<br>
-                    <strong>Lze vypnout?</strong> <span style="color: var(--primary);">Ano</span> - v nastavení cookies.</p>
-                </div>
-                
-                <div class="cookie-type" style="background: rgba(155, 89, 182, 0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px; border-left: 4px solid #9b59b6;">
-                    <h3 style="color: #9b59b6; margin-bottom: 10px;">
-                        <i class="fas fa-ad"></i> 3. Marketingové cookies
-                    </h3>
-                    <p><strong>Účel:</strong> Personalizace reklam a obsahu, remarketing.<br>
-                    <strong>Příklad:</strong> Google AdSense - zobrazování relevantních reklam.<br>
-                    <strong>Doba uchování:</strong> Až 12 měsíců.<br>
-                    <strong>Lze vypnout?</strong> <span style="color: var(--primary);">Ano</span> - v nastavení cookies.</p>
-                </div>
-            </section>
-            
-            <section style="margin-bottom: 40px;">
-                <h2 style="color: var(--secondary); margin: 25px 0 15px; border-bottom: 2px solid var(--secondary); padding-bottom: 8px;">
-                    <i class="fas fa-cog"></i> Jak cookies spravovat?
-                </h2>
-                <p>Cookies můžete spravovat několika způsoby:</p>
-                <ul style="margin: 15px 0 15px 20px; color: var(--text-light);">
-                    <li><strong>V nastavení tohoto webu:</strong> Klikněte na ikonu 🍪 v pravém dolním rohu</li>
-                    <li><strong>V prohlížeči:</strong> Nastavení → Soukromí a zabezpečení → Cookies</li>
-                    <li><strong>Google Analytics opt-out:</strong> <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color: var(--primary);">Vypnout sledování</a></li>
-                    <li><strong>AdChoices:</strong> <a href="https://optout.aboutads.info/" target="_blank" style="color: var(--primary);">Spravovat reklamní preference</a></li>
-                </ul>
-            </section>
-            
-            <section style="margin-bottom: 40px;">
-                <h2 style="color: var(--secondary); margin: 25px 0 15px; border-bottom: 2px solid var(--secondary); padding-bottom: 8px;">
-                    <i class="fas fa-shield-alt"></i> Vaše práva
-                </h2>
-                <p>Podle GDPR máte právo:</p>
-                <ul style="margin: 15px 0 15px 20px; color: var(--text-light);">
-                    <li>Udělit nebo odvolat souhlas s cookies</li>
-                    <li>Požadovat informace o tom, jaké cookies používáme</li>
-                    <li>Požadovat smazání cookies</li>
-                    <li>Podat stížnost u Úřadu pro ochranu osobních údajů</li>
-                </ul>
-            </section>
-            
-            <div class="notice" style="background: rgba(241, 196, 15, 0.1); padding: 20px; border-radius: 10px; margin: 30px 0; border: 2px dashed #f1c40f;">
-                <h3 style="color: #f1c40f; margin-bottom: 10px;">
-                    <i class="fas fa-exclamation-triangle"></i> Důležité upozornění
-                </h3>
-                <p style="margin-bottom: 0;">Vypnutím některých cookies může být část obsahu nebo funkcí webu nedostupná. Reklamy se mohou zobrazovat méně relevantní.</p>
-            </div>
-            
-            <section>
-                <h2 style="color: var(--secondary); margin: 25px 0 15px; border-bottom: 2px solid var(--secondary); padding-bottom: 8px;">
-                    <i class="fas fa-envelope"></i> Kontakt
-                </h2>
-                <p>Máte dotazy ohledně cookies nebo ochrany soukromí? Kontaktujte nás:</p>
-                <p style="background: var(--card-bg); padding: 15px; border-radius: 8px; margin: 15px 0;">
-                    <strong style="color: var(--primary);">E-mail:</strong> cookies@hernipruvodce.cz<br>
-                    <strong style="color: var(--primary);">Předmět:</strong> Cookies dotaz
-                </p>
-            </section>
-            
-            <p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-light); font-size: 0.9rem; text-align: center;">
-                Tato politika může být aktualizována. Aktuální verzi vždy najdete na této stránce.<br>
-                <em>Naposledy aktualizováno: Leden 2026</em>
+        <div class="breadcrumb" style="margin-bottom: 30px; color: var(--text-light); font-size: 0.9rem;">
+            <a href="index.html">Domů</a> <i class="fas fa-chevron-right" style="margin: 0 10px; font-size: 0.8rem;"></i>
+            <span>Cookies politika</span>
+        </div>
+        
+        <div class="last-updated" style="background: rgba(0, 184, 148, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid var(--primary);">
+            <p style="margin: 0; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-calendar-alt" style="color: var(--primary);"></i>
+                <strong>Poslední aktualizace:</strong> Leden 2026 | <strong>Verze:</strong> 1.0
             </p>
         </div>
         
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="index.html" class="btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px;">
-                <i class="fas fa-arrow-left"></i> Zpět na hlavní stránku
-            </a>
-            <button onclick="showCookieSettings()" class="btn btn-outline" style="margin-left: 15px; padding: 12px 25px;">
-                <i class="fas fa-cog"></i> Spravovat cookies
-            </button>
+        <div class="policy-content">
+            
+            <section class="policy-section">
+                <h2><i class="fas fa-info-circle"></i> Co jsou cookies?</h2>
+                <p>Cookies jsou malé textové soubory, které webové stránky ukládají do vašeho zařízení (počítače, tabletu, smartphonu) při jejich návštěvě. Tyto soubory umožňují webu zapamatovat si vaše akce a preference (jako přihlášení, jazyk, velikost písma a další zobrazovací preference) po určitou dobu, takže je nemusíte znovu zadávat pokaždé, když se na web vrátíte nebo procházíte jednotlivé stránky.</p>
+            </section>
+            
+            <section class="policy-section">
+                <h2><i class="fas fa-list"></i> Jaké cookies používáme a proč?</h2>
+                
+                <table class="cookies-table">
+                    <thead>
+                        <tr>
+                            <th>Typ cookie</th>
+                            <th>Účel</th>
+                            <th>Doba uchování</th>
+                            <th>Správce</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nezbytné</strong></td>
+                            <td>Základní funkce webu, zabezpečení, přihlášení</td>
+                            <td>Relace / 24 měsíců</td>
+                            <td>HerníPrůvodce.cz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analytické</strong></td>
+                            <td>Analýza návštěvnosti, měření výkonu</td>
+                            <td>Až 24 měsíců</td>
+                            <td>Google Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marketingové</strong></td>
+                            <td>Personalizace reklam, remarketing</td>
+                            <td>Až 12 měsíců</td>
+                            <td>Google AdSense</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Preferenční</strong></td>
+                            <td>Uložení uživatelských nastavení</td>
+                            <td>Až 12 měsíců</td>
+                            <td>HerníPrůvodce.cz</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section class="policy-section">
+                <h2><i class="fas fa-cog"></i> Jak cookies spravovat?</h2>
+                
+                <h3>1. Přímo na tomto webu</h3>
+                <p>Můžete spravovat cookies pomocí našeho cookie banneru. Klikněte na ikonu <i class="fas fa-cog" style="color: var(--primary);"></i> v pravém dolním rohu stránky pro změnu nastavení.</p>
+                
+                <h3>2. V prohlížeči</h3>
+                <p>Většina prohlížečů umožňuje:</p>
+                <ul>
+                    <li><strong>Chrome:</strong> Nastavení → Soukromí a zabezpečení → Cookies a další data stránek</li>
+                    <li><strong>Firefox:</strong> Možnosti → Soukromí a zabezpečení → Cookies a data stránek</li>
+                    <li><strong>Safari:</strong> Předvolby → Soukromí → Správa dat webových stránek</li>
+                    <li><strong>Edge:</strong> Nastavení → Soukromí, vyhledávání a služby → Cookies</li>
+                </ul>
+                
+                <h3>3. Opt-out nástroje třetích stran</h3>
+                <ul>
+                    <li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out</a></li>
+                    <li><a href="https://optout.aboutads.info/" target="_blank" rel="noopener">YourAdChoices (reklamní preference)</a></li>
+                    <li><a href="https://www.youronlinechoices.com/cz/" target="_blank" rel="noopener">Your Online Choices</a></li>
+                </ul>
+            </section>
+            
+            <section class="policy-section">
+                <h2><i class="fas fa-shield-alt"></i> Vaše práva podle GDPR</h2>
+                <p>Podle Obecného nařízení o ochraně osobních údajů (GDPR) máte následující práva:</p>
+                
+                <div class="gdpr-rights">
+                    <div class="right-card">
+                        <i class="fas fa-download"></i>
+                        <h4>Právo na přístup</h4>
+                        <p>Můžete požadovat informace o tom, jaké osobní údaje o vás zpracováváme.</p>
+                    </div>
+                    <div class="right-card">
+                        <i class="fas fa-edit"></i>
+                        <h4>Právo na opravu</h4>
+                        <p>Můžete požadovat opravu nepřesných nebo neúplných osobních údajů.</p>
+                    </div>
+                    <div class="right-card">
+                        <i class="fas fa-trash-alt"></i>
+                        <h4>Právo na výmaz</h4>
+                        <p>Můžete požadovat smazání svých osobních údajů ("právo být zapomenut").</p>
+                    </div>
+                    <div class="right-card">
+                        <i class="fas fa-ban"></i>
+                        <h4>Právo na omezení</h4>
+                        <p>Můžete požadovat omezení zpracování svých osobních údajů.</p>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(52, 152, 219, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h3 style="color: var(--secondary); margin-bottom: 10px;"><i class="fas fa-download"></i> Export vašich dat</h3>
+                    <p>Můžete si stáhnout všechna data, která o vás máme:</p>
+                    <button onclick="exportUserData()" class="btn" style="margin-top: 10px;">
+                        <i class="fas fa-file-export"></i> Exportovat moje data
+                    </button>
+                </div>
+                
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <h3 style="color: #e74c3c; margin-bottom: 10px;"><i class="fas fa-trash-alt"></i> Smazat všechna data</h3>
+                    <p>Můžete požadovat smazání všech vašich osobních údajů:</p>
+                    <button onclick="if(confirm('Opravdu chcete smazat VŠECHNY vaše data z tohoto webu? Tato akce je nevratná.')) deleteAllUserData();" 
+                            class="btn" style="margin-top: 10px; background: #e74c3c;">
+                        <i class="fas fa-trash"></i> Smazat moje data
+                    </button>
+                </div>
+            </section>
+            
+            <section class="policy-section">
+                <h2><i class="fas fa-question-circle"></i> Často kladené dotazy</h2>
+                
+                <div class="faq-item">
+                    <h3>Můžu používat web bez cookies?</h3>
+                    <p>Ano, ale některé funkce mohou být omezeny. Nezbytné cookies nelze vypnout, protože jsou nutné pro fungování webu.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Kde jsou moje data uložena?</h3>
+                    <p>Data z cookies jsou uložena ve vašem prohlížeči. Analytická data jsou anonymizována a ukládána na serverech Google v EU.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Prodáváte moje data třetím stranám?</h3>
+                    <p>Ne, vaše osobní data neprodáváme. Používáme pouze agregovaná anonymní data pro analýzu a zlepšení webu.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Jak často aktualizujete cookies politiku?</h3>
+                    <p>Politiku aktualizujeme podle potřeby, minimálně však 1x ročně. Všechny změny budou zveřejněny na této stránce.</p>
+                </div>
+            </section>
+            
+            <section class="policy-section">
+                <h2><i class="fas fa-envelope"></i> Kontakt</h2>
+                <p>Máte dotazy ohledně cookies nebo ochrany soukromí? Kontaktujte nás:</p>
+                
+                <div class="contact-info" style="background: var(--card-bg); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <p><strong><i class="fas fa-at"></i> E-mail:</strong> 
+                        <a href="mailto:gdpr@hernipruvodce.cz" style="color: var(--primary);">gdpr@hernipruvodce.cz</a>
+                    </p>
+                    <p><strong><i class="fas fa-clock"></i> Doba odpovědi:</strong> Do 30 dnů</p>
+                    <p><strong><i class="fas fa-external-link-alt"></i> Úřad pro ochranu osobních údajů:</strong> 
+                        <a href="https://www.uoou.cz" target="_blank" rel="noopener">www.uoou.cz</a>
+                    </p>
+                </div>
+            </section>
+            
+            <div class="policy-footer" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-light); text-align: center; font-size: 0.9rem;">
+                <p>Tato cookies politika je platná od 1. ledna 2026.</p>
+                <p>Identifikační číslo: IČO bude doplněno po registraci podnikání</p>
+                <p style="margin-top: 15px;">
+                    <button onclick="showCookieSettings()" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">
+                        <i class="fas fa-cog"></i> Spravovat cookies
+                    </button>
+                </p>
+            </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="footer-grid">
                 <div class="footer-col">
                     <h3>HerníPrůvodce.cz</h3>
                     <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče.</p>
                 </div>
                 <div class="footer-col">
-                    <h3>Právní informace</h3>
+                    <h3>Právní dokumenty</h3>
                     <ul>
                         <li><a href="cookies.html">Cookies politika</a></li>
                         <li><a href="ochrana-udaju.html">Ochrana osobních údajů</a></li>
                         <li><a href="obchodni-podminky.html">Obchodní podmínky</a></li>
-                        <li><a href="index.html">Zpět na hlavní stránku</a></li>
+                        <li><a href="#" onclick="showCookieSettings(); return false;">Spravovat cookies</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 HerníPrůvodce.cz – Všechna práva vyhrazena.</p>
+                <p>&copy; 2026 HerníPrůvodce.cz – Všechna práva vyhrazena. | Verze 1.0</p>
             </div>
         </div>
     </footer>
-    <script src="cookies.js"></script>
+
+    <style>
+        .policy-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .policy-section:last-child {
+            border-bottom: none;
+        }
+        
+        .policy-section h2 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .policy-section h3 {
+            color: var(--primary);
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        .cookies-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .cookies-table thead {
+            background: var(--primary);
+            color: #000;
+        }
+        
+        .cookies-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .cookies-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .cookies-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .gdpr-rights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .right-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            text-align: center;
+        }
+        
+        .right-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .right-card h4 {
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--secondary);
+        }
+        
+        .faq-item h3 {
+            color: var(--text);
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .cookies-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .gdpr-rights {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>
