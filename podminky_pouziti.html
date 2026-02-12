@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podmínky použití - HerníPrůvodce.cz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .terms-container {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        .terms-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border);
+        }
+        .terms-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .terms-header i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .terms-header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .terms-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .terms-section:last-child {
+            border-bottom: none;
+        }
+        .terms-section h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .terms-section p, li {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        .terms-section ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .terms-section li {
+            margin-bottom: 10px;
+        }
+        .important-note {
+            background: rgba(241, 196, 15, 0.1);
+            border-left: 4px solid #f1c40f;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .copyright-box {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+      <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i>
+                HerníPrůvodce
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Domů</a></li>
+                    <li><a href="#articles"><i class="fas fa-newspaper"></i> Články</a></li>
+                    <li><a href="#categories"><i class="fas fa-th-large"></i> Kategorie</a></li>
+                    <li><a href="#newsletter"><i class="fas fa-envelope"></i> Newsletter</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="Hledat články...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="terms-container">
+        <div class="terms-card">
+            <div class="terms-header">
+                <i class="fas fa-file-contract"></i>
+                <h1>Podmínky použití</h1>
+                <p style="color: var(--text-light);">Kdo za co ručí (a hlavně neručí)</p>
+            </div>
+
+            <!-- INFO O WEBU -->
+            <div class="terms-section">
+                <h2><i class="fas fa-info-circle"></i> O webu</h2>
+                <p>HerníPrůvodce.cz je <strong>nezávislý informační web</strong> provozovaný jednou fyzickou osobou. Není to profesionální poradenská služba, ani certifikované testovací pracoviště.</p>
+                <p>Všechny články, recenze a návody vznikají na základě vlastního testování, rešerší a zkušeností autora. Snažím se o maximální přesnost, ale <strong style="color: #fff;">počítačový hardware je složitý a každá sestava se může chovat jinak</strong>.</p>
+            </div>
+
+            <!-- ODPOVĚDNOST -->
+            <div class="terms-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> Důležité upozornění</h2>
+                
+                <div class="important-note">
+                    <p style="margin-top: 0; font-weight: bold; color: #f1c40f;">⚠️ Tohle není právní ani profesionální poradenství</p>
+                    <p>Informace na tomto webu jsou poskytovány "jak jsou", na základě reálných zkušeností a dobré víry. Nejsem počítačový inženýr, ani certifikovaný technik. Jsem nadšenec, který se dělí o to, co funguje jemu.</p>
+                </div>
+
+                <p><strong>Autor neručí za:</strong></p>
+                <ul>
+                    <li>💥 škody vzniklé při stavbě PC podle návodů (např. poškození komponent, ztráta dat)</li>
+                    <li>📉 výkonnostní rozdíly oproti testům (každý PC je jiný, každý ovladač mění chování)</li>
+                    <li>💰 změny cen a dostupnosti hardware</li>
+                    <li>🔧 nekompatibilitu komponent, která nebyla v článku odhalena</li>
+                    <li>📱 obsah externích odkazů (obchody, výrobci)</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>Doporučení:</strong> Než koupíte hardware za desítky tisíc, ověřte si informace na více místech. Web vám chce pomoct, ne za vás rozhodovat.</p>
+            </div>
+
+            <!-- AUTORSKÁ PRÁVA -->
+            <div class="terms-section">
+                <h2><i class="fas fa-copyright"></i> Autorská práva a obsah</h2>
+                
+                <p>Všechny texty, fotografie, grafy, tabulky a další obsah na HerníPrůvodce.cz jsou <strong>mým duševním vlastnictvím</strong>, pokud není uvedeno jinak.</p>
+                
+                <div class="copyright-box">
+                    <h3 style="color: #e74c3c; margin-top: 0; margin-bottom: 10px;">🚫 Kopírování zakázáno</h3>
+                    <p style="margin-bottom: 0;"><strong>Nekopírujte celé články ani jejich podstatné části</strong> bez mého písemného souhlasu. To platí pro weby, sociální sítě, newslettery i tisk.</p>
+                </div>
+
+                <p style="margin-top: 20px;"><strong>Co můžete dělat:</strong></p>
+                <ul>
+                    <li>✅ Sdílet odkazy na články (dokonce budu rád!)</li>
+                    <li>✅ Citovat krátké úryvky (max. 2 věty) s uvedením zdroje a aktivním odkazem</li>
+                    <li>✅ Ukládat články pro osobní potřebu</li>
+                </ul>
+
+                <p><strong>Co nemůžete dělat:</strong></p>
+                <ul>
+                    <li>❌ Přepisovat a publikovat celé články jako vlastní</li>
+                    <li>❌ Stahovat obrázky a grafy a používat je bez souhlasu</li>
+                    <li>❌ Prodávat obsah tohoto webu</li>
+                </ul>
+            </div>
+
+            <!-- AFFILIATE ODKAZY
+            <div class="terms-section">
+                <h2><i class="fas fa-hand-holding-usd"></i> Affiliate odkazy</h2>
+                <p>Některé odkazy na e-shopy jsou tzv. affiliate odkazy. Pokud přes ně nakoupíte, můžu získat malou provizi – <strong style="color: #fff;">cena pro vás je stejná</strong>, jako byste šli na obchod přímo.</p>
+                <p>Provize mi pomáhá pokrýt náklady na provoz webu a čas strávený testováním. Zařazení produktu do článku není placené. Nikdy nedoporučuji něco, co bych si nekoupil sám.</p>
+            </div>
+             -->
+
+            <!-- ZÁVĚR -->
+            <div class="terms-section" style="border-bottom: none;">
+                <h2><i class="fas fa-check-circle"></i> Používáním webu souhlasíte</h2>
+                <p>Tím, že na HerníPrůvodce.cz zůstáváte a čtete články, potvrzujete, že jste seznámeni s těmito podmínkami a rozumíte jim.</p>
+                <p style="margin-top: 20px;">Pokud s něčím nesouhlasíte, prosím <strong>web dále nepoužívejte</strong>. Je to fér vůči oběma stranám.</p>
+                <p style="margin-top: 30px; font-style: italic; color: #fff;">Děkuji za pochopení a respekt. 🙏</p>
+            </div>
+
+            <p style="text-align: center; margin-top: 40px; color: var(--text-light); font-size: 0.9rem;">
+                Platné od: únor 2026 | Vyhrazuji si právo podmínky kdykoli změnit.
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+       <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>HerníPrůvodce.cz</h3>
+                <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Rychlé odkazy</h3>
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="#articles">Všechny články</a></li>
+                    <li><a href="#categories">Kategorie</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Kategorie</h3>
+                <ul>
+                    <li><a href="#articles" data-filter="pc-build">PC Sestavy</a></li>
+                    <li><a href="#articles" data-filter="hardware">Hardware</a></li>
+                    <li><a href="#articles" data-filter="ai">AI Technologie</a></li>
+                    <li><a href="#articles" data-filter="tutorial">Návody</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Právní informace</h3>
+                <ul>
+                    <li><a href="ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
+                    <li><a href="podminky_pouziti.html">Podmínky užití</a></li>
+                    <li><a href="#">Reklamní podmínky</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+         <!--
+        <div class="copyright">
+            <p>&copy; 2026 HerníPrůvodce.cz – Všechna práva vyhrazena. | 
+            <strong>Upozornění:</strong> Tento web obsahuje affiliate odkazy. Nákupem přes ně podpoříte provoz webu bez navýšení ceny pro vás.</p>
+        </div>
+        -->
+    </div>
+    </footer>
+</body>
+</html>

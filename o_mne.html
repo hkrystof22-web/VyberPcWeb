@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O mně - HerníPrůvodce.cz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-container {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        .about-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border);
+        }
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .about-header i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .about-header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .about-section {
+            margin-bottom: 30px;
+        }
+        .about-section h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .about-section p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .contact-box {
+            background: rgba(0, 184, 148, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .contact-box i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+    <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i>
+                HerníPrůvodce
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Domů</a></li>
+                    <li><a href="#articles"><i class="fas fa-newspaper"></i> Články</a></li>
+                    <li><a href="#categories"><i class="fas fa-th-large"></i> Kategorie</a></li>
+                    <li><a href="#newsletter"><i class="fas fa-envelope"></i> Newsletter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<!-- FOOTER -->
+    <div class="about-container">
+        <div class="about-card">
+            <div class="about-header">
+                <i class="fas fa-user-circle"></i>
+                <h1>O mně</h1>
+                <p style="color: var(--text-light);">Kdo stojí za HerníPrůvodce.cz</p>
+            </div>
+
+            <div class="about-section">
+                <h2><i class="fas fa-desktop"></i> Kdo jsem</h2>
+                <p>Jsem nadšenec do počítačů, her a technologií. Už od dob, kdy jsem si skládal své první PC z bazarových komponent, mě baví zkoumat, co v hardware doopravdy funguje a za co se vyplatí utrácet.</p>
+                <p>HerníPrůvodce.cz je můj osobní projekt, který dělám ve volném čase. Žádná firma, žádný tým, žádný investor. Jen já, počítač a snaha pomoct lidem se vyznat v záplavě grafických karet, procesorů a herních sestav.</p>
+            </div>
+
+            <div class="about-section">
+                <h2><i class="fas fa-bullseye"></i> O čem to teda je?</h2>
+                <p>Všechny články píšu na základě vlastních zkušeností, testování a reálných dat. Nesnažím se prodávat, ale vysvětlit. Články vychází z kombinace vlastních zkušeností, veřejně dostupných testů a technických dat.</p>
+                <p>Najdeš tu:</p>
+                <ul style="color: var(--text-light); margin-left: 20px; line-height: 2;">
+                    <li>🔧 návody na stavbu PC krok za krokem</li>
+                    <li>💰 srovnání poměru cena/výkon</li>
+                    <li>🎮 reálné herní testy</li>
+                    <li>🤖 přehledně zpracované novinky jako DLSS, Frame Generation a AI</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h2><i class="fas fa-hand-peace"></i> Proč to dělám?</h2>
+                <p>Protože mě to baví. A protože vím, jak těžké je vybrat si dobrý hardware, když člověk není profík. Když jsem začínal, platil jsem za chyby – dnes se s vámi dělím o to, co jsem se naučil.</p>
+                <p>Web není komerční projekt. Pokud se mi v budoucnu podaří na něj dát reklamy, které ho udrží v chodu, super. Pokud ne, budu psát dál tak jako tak.</p>
+            </div>
+
+            <div class="contact-box">
+                <h3 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-envelope"></i> Kontakt</h3>
+                <p style="margin-bottom: 5px;">Máš dotaz, nápad, nebo sis všiml chyby?</p>
+                <p style="font-size: 1.2rem; font-weight: bold; color: #fff;">📧 krustdesing@gmail.com</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-light);">Odpovídám, jak mi to čas dovolí – obvykle do pár dní. Díky za trpělivost!</p>
+            </div>
+
+            <p style="text-align: center; margin-top: 40px; color: var(--text-light);">
+                <i class="fas fa-heart" style="color: var(--primary);"></i> Děkuji, že čteš.
+            </p>
+        </div>
+    </div>
+
+    
+    <footer>
+         <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>HerníPrůvodce.cz</h3>
+                <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Rychlé odkazy</h3>
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="#articles">Všechny články</a></li>
+                    <li><a href="#categories">Kategorie</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Kategorie</h3>
+                <ul>
+                    <li><a href="#articles" data-filter="pc-build">PC Sestavy</a></li>
+                    <li><a href="#articles" data-filter="hardware">Hardware</a></li>
+                    <li><a href="#articles" data-filter="ai">AI Technologie</a></li>
+                    <li><a href="#articles" data-filter="tutorial">Návody</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Právní informace</h3>
+                <ul>
+                    <li><a href="#">Ochrana osobních údajů</a></li>
+                    <li><a href="#">Podmínky užití</a></li>
+                    <li><a href="#">Reklamní podmínky</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--
+        <div class="copyright">
+            <p>&copy; 2026 HerníPrůvodce.cz – Všechna práva vyhrazena. | 
+            <strong>Upozornění:</strong> Tento web obsahuje affiliate odkazy. Nákupem přes ně podpoříte provoz webu bez navýšení ceny pro vás.</p>
+        </div>
+        -->
+    </div>
+    </footer>
+</body>
+</html>

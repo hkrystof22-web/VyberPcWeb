@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ochrana osobních údajů - HerníPrůvodce.cz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .privacy-container {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        .privacy-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border);
+        }
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .privacy-header i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .privacy-header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .privacy-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .privacy-section:last-child {
+            border-bottom: none;
+        }
+        .privacy-section h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .privacy-section h3 {
+            color: #fff;
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        .privacy-section p, li {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        .privacy-section ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .privacy-section li {
+            margin-bottom: 8px;
+        }
+        .status-badge {
+            display: inline-block;
+            background: #f39c12;
+            color: #000;
+            font-weight: bold;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 15px;
+            vertical-align: middle;
+        }
+        .future-box {
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .contact-privacy {
+            background: rgba(0, 184, 148, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+       <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i>
+                HerníPrůvodce
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Domů</a></li>
+                    <li><a href="#articles"><i class="fas fa-newspaper"></i> Články</a></li>
+                    <li><a href="#categories"><i class="fas fa-th-large"></i> Kategorie</a></li>
+                    <li><a href="#newsletter"><i class="fas fa-envelope"></i> Newsletter</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="Hledat články...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="privacy-container">
+        <div class="privacy-card">
+            <div class="privacy-header">
+                <i class="fas fa-shield-alt"></i>
+                <h1>Ochrana osobních údajů</h1>
+                <p style="color: var(--text-light);">Jak to u nás funguje s cookies a soukromím</p>
+            </div>
+
+            <!-- AKTUÁLNÍ STAV -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-clock"></i> Aktuální stav webu <span class="status-badge">PRÁVĚ TEĎ</span></h2>
+                <p><strong>Žádné reklamy, žádná analytika, žádné sledování.</strong></p>
+                <p>V tuto chvíli na webu <strong style="color: #fff;">NEPOUŽÍVÁM</strong>:</p>
+                <ul>
+                    <li>❌ Google AdSense ani žádné jiné reklamy</li>
+                    <li>❌ Google Analytics ani jiné nástroje na měření návštěvnosti</li>
+                    <li>❌ Marketingové cookies</li>
+                    <li>❌ Sledovací pixely</li>
+                </ul>
+            </div>
+
+            <!-- CO PLÁNUJI -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-code-branch"></i> Co plánuji do budoucna</h2>
+                
+                <div class="future-box">
+                    <h3 style="color: #3498db; margin-top: 0;">📊 Google Analytics</h3>
+                    <p>Pokud se web rozjede, rád bych věděl, kolik lidí ho čte a které články jsou nejoblíbenější. Nezajímá mě, kdo jste, jen co vás baví.</p>
+                    <p style="margin-bottom: 0;"><strong>Plán:</strong> Pokud Analytics spustím, budete se moct rozhodnout, jestli chcete být měřeni nebo ne. Nikdy bez vašeho souhlasu.</p>
+                </div>
+
+                <div class="future-box">
+                    <h3 style="color: #e74c3c; margin-top: 0;">💰 Google AdSense</h3>
+                    <p>Provoz webu něco stojí (doména, hosting, čas). Reklamy jsou způsob, jak to udržet zdarma pro všechny čtenáře. Nechci žádné otravné bannery, ale slušnou reklamu, která dává smysl.</p>
+                    <p style="margin-bottom: 0;"><strong>Plán:</strong> Pokud AdSense spustím, použiju oficiální Google CMP systém, který splňuje přísná pravidla GDPR. Budete mít naprostou kontrolu nad tím, jaké cookies povolíte.</p>
+                </div>
+
+                <p style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                    <i class="fas fa-check-circle" style="color: var(--primary);"></i> 
+                    <strong>Cookie banner:</strong> Jakmile spustím jakékoli sledování nebo reklamy, uvidíte dole na stránce přehledný banner, kde si vše nastavíte. Žádné "skryté" zapnutí, žádné předzaškrtnuté políčka. Jen čistý souhlas nebo nesouhlas.
+                </p>
+            </div>
+
+            <!-- VAŠE PRÁVA -->
+            <div class="privacy-section">
+                <h2><i class="fas fa-gavel"></i> Vaše práva</h2>
+                <p>GDPR není jen obtížný předpis, ale hlavně vaše práva. A já je beru vážně.</p>
+                <p><strong>Máte právo:</strong></p>
+                <ul>
+                    <li>🔹 <strong>Vědět</strong> – co zpracovávám a proč (tady to právě čtete)</li>
+                    <li>🔹 <strong>Rozhodnout se</strong> – souhlas můžete kdykoli udělit i odvolat</li>
+                    <li>🔹 <strong>Být zapomenut</strong> – Pokud by v budoucnu docházelo ke zpracování osobních údajů , budete mít právo požadovat jejich výmaz.</li>
+                    <li>🔹 <strong>Opravit</strong> – nepřesné údaje</li>
+                    <li>🔹 <strong>Vznést námitku</strong> – proti zpracování</li>
+                </ul>
+                <p>Stačí napsat na email níže. Žádné složité formuláře, žádná právnická čeština.</p>
+            </div>
+
+            <!-- KONTAKT -->
+            <div class="contact-privacy">
+                <h3 style="color: var(--primary); margin-bottom: 15px;"><i class="fas fa-envelope"></i> Kontakt pro ochranu údajů</h3>
+                <p style="margin-bottom: 5px;">Všechny žádosti, dotazy nebo připomínky k ochraně soukromí posílejte na:</p>
+                <p style="font-size: 1.3rem; font-weight: bold; color: #fff; margin: 15px 0;">📧 krustdesing@gmail.com</p>
+                <p style="margin: 0; font-size: 0.9rem; color: var(--text-light);">Odpovídám do pár dnů. Pokud neodpovím, pošlete to znovu – někdy padá pošta do spamu.</p>
+            </div>
+
+            <p style="text-align: center; margin-top: 40px; color: var(--text-light); font-size: 0.9rem;">
+                Verze: únor 2026 | Tento dokument se aktualizuje při každé významné změně.
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>HerníPrůvodce.cz</h3>
+                <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Rychlé odkazy</h3>
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="#articles">Všechny články</a></li>
+                    <li><a href="#categories">Kategorie</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Kategorie</h3>
+                <ul>
+                    <li><a href="#articles" data-filter="pc-build">PC Sestavy</a></li>
+                    <li><a href="#articles" data-filter="hardware">Hardware</a></li>
+                    <li><a href="#articles" data-filter="ai">AI Technologie</a></li>
+                    <li><a href="#articles" data-filter="tutorial">Návody</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Právní informace</h3>
+                <ul>
+                    <li><a href="#">Ochrana osobních údajů</a></li>
+                    <li><a href="#">Podmínky užití</a></li>
+                    <li><a href="#">Reklamní podmínky</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--
+        <div class="copyright">
+            <p>&copy; 2026 HerníPrůvodce.cz – Všechna práva vyhrazena. | 
+            <strong>Upozornění:</strong> Tento web obsahuje affiliate odkazy. Nákupem přes ně podpoříte provoz webu bez navýšení ceny pro vás.</p>
+        </div>
+        -->
+    </div>
+    </footer>
+</body>
+</html>

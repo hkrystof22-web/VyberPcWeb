@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - HerníPrůvodce.cz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .disclaimer-container {
+            max-width: 800px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+        .disclaimer-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--border);
+        }
+        .disclaimer-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .disclaimer-header i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .disclaimer-header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .disclaimer-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .disclaimer-section:last-child {
+            border-bottom: none;
+        }
+        .disclaimer-section h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .disclaimer-section h3 {
+            color: #fff;
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        .disclaimer-section p, li {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        .disclaimer-section ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .disclaimer-section li {
+            margin-bottom: 10px;
+        }
+        .warning-box {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .affiliate-box {
+            background: rgba(241, 196, 15, 0.1);
+            border-left: 4px solid #f1c40f;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .test-box {
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .highlight {
+            color: #fff;
+            font-weight: bold;
+        }
+        .small-note {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 15px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER (zkopíruj svůj stávající header) -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i>
+                HerníPrůvodce
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Domů</a></li>
+                    <li><a href="#articles"><i class="fas fa-newspaper"></i> Články</a></li>
+                    <li><a href="#categories"><i class="fas fa-th-large"></i> Kategorie</a></li>
+                    <li><a href="#newsletter"><i class="fas fa-envelope"></i> Newsletter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="disclaimer-container">
+        <div class="disclaimer-card">
+            <div class="disclaimer-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h1>Disclaimer</h1>
+                <p style="color: var(--text-light);">Důležité informace – přečtěte si, prosím</p>
+            </div>
+
+            <!-- HLAVNÍ UPOZORNĚNÍ -->
+            <div class="warning-box">
+                <h3 style="color: #e74c3c; margin-top: 0; margin-bottom: 10px;">
+                    <i class="fas fa-exclamation-circle"></i> Tohle si přečtěte jako první
+                </h3>
+                <p style="margin-bottom: 0; font-weight: bold; color: #fff;">
+                    HerníPrůvodce.cz je nezávislý hobby projekt. Nejsem počítačový inženýr, technik ani certifikovaný poradce. 
+                    Jsem jen nadšenec, co rád testuje hardware a píše o tom.
+                </p>
+            </div>
+
+            <!-- ODPOVĚDNOST ZA ŠKODY -->
+            <div class="disclaimer-section">
+                <h2><i class="fas fa-shield"></i> Odpovědnost za škody</h2>
+                
+                <p><strong class="highlight">Autor neručí za žádné škody</strong> vzniklé přímým či nepřímým použitím informací z tohoto webu.</p>
+                
+                <ul>
+                    <li><strong>⚠️ Stavba PC:</strong> Pokud si postavíte počítač podle mého návodu a spálíte procesor, ohnete piny nebo zkratujete základní desku – je to vaše zodpovědnost. Představuji postup, který fungoval mně, ale neručím za vaše ruce.</li>
+                    
+                    <li><strong>⚠️ Přetaktování:</strong> Jakékoli informace o přetaktování CPU, GPU nebo RAM jsou čistě informativní. Přetaktování vždy nese riziko poškození komponent a ztráty záruky. Děláte na vlastní nebezpečí.</li>
+                    
+                    <li><strong>⚠️ Kompatibilita:</strong> Hardware se vyvíjí, ovladače se mění, BIOS aktualizuje. Co fungovalo v době psaní článku, nemusí fungovat za půl roku. Vždy si ověřujte aktuální informace u výrobce.</li>
+                    
+                    <li><strong>⚠️ Ztráta dat:</strong> Při instalaci OS, ovladačů nebo úpravách systému může dojít ke ztrátě dat. Dělejte si zálohy. Vážně.</li>
+                </ul>
+                
+                <p style="margin-top: 15px;">Stručně řečeno: <strong style="color: #fff;">děláte to sami, na vlastní triko.</strong> Já jen radím, nenesu odpovědnost za výsledek.</p>
+            </div>
+
+           
+            <!-- AFFILIATE A REKLAMA 
+            <div class="disclaimer-section">
+                <h2><i class="fas fa-hand-holding-usd"></i> Affiliate odkazy a reklama</h2>
+                
+                <div class="affiliate-box">
+                    <h3 style="color: #f1c40f; margin-top: 0;">💰 Jak to funguje</h3>
+                    <p style="margin-bottom: 0;">Některé odkazy na e-shopy (Alza, CZC, Mironet, Datart atd.) jsou <strong>affiliate odkazy</strong>. Pokud přes ně nakoupíte, dostanu malou provizi – <span style="color: #fff; font-weight: bold;">vy neplatíte ani korunu navíc</span>. Obchod platí mně za to, že jsem vás doporučil.</p>
+                </div>
+                
+                <p><strong class="highlight">Důležité:</strong></p>
+                <ul>
+                    <li>✅ Nikdy nedoporučuji produkt jen kvůli provizi. Doporučuji ho, protože si myslím, že stojí za to.</li>
+                    <li>✅ Kdyby mi někdo zaplatil za pozitivní recenzi, řeknu to otevřeně. Zatím se nestalo.</li>
+                    <li>✅ Pokud je článek sponzorovaný, bude to výrazně označeno hned na začátku.</li>
+                    <li>❌ Neberu peníze za záruku pozitivního hodnocení. Nikdy.</li>
+                </ul>
+                
+                <p>Provize z affiliate odkazů mi pomáhá platit hosting, doménu a občas i nový hardware na testování. Díky, že přes ně nakupujete 🙏</p>
+            </div>
+-->
+            <!-- CENY A DOSTUPNOST -->
+            <div class="disclaimer-section">
+                <h2><i class="fas fa-tag"></i> Ceny a dostupnost</h2>
+                
+                <p><strong class="highlight">Všechny ceny uvedené v článcích jsou orientační.</strong></p>
+                
+                <ul>
+                    <li>📉 Ceny hardware se mění denně – výprodeje, akce, nedostatek čipů</li>
+                    <li>📈 Kurz dolaru ovlivňuje ceny ze dne na den</li>
+                    <li>🏪 Každý e-shop má jinou cenu, jiné poštovné, jinou dostupnost</li>
+                    <li>🔗 Odkaz na obchod v článku nemusí být nejlevnější – je to odkaz, kde jsem to našel já</li>
+                </ul>
+                
+                <p>Než koupíte, <strong>porovnejte ceny na více místech</strong>. Heureka, Zboží.cz, Hlídač shopů – jsou na to skvělé nástroje.</p>
+            </div>
+
+            <!-- EXTERNÍ ODKAZY -->
+            <div class="disclaimer-section">
+                <h2><i class="fas fa-external-link-alt"></i> Externí odkazy</h2>
+                
+                <p>Na webu najdete odkazy na jiné weby (výrobci, e-shopy, recenzenti, fóra). <strong class="highlight">Nenesu odpovědnost za jejich obsah</strong>.</p>
+                
+                <p>Pokud kliknete na odkaz a opustíte HerníPrůvodce.cz, končí moje kontrola nad tím, co uvidíte. Nemůžu ovlivnit:</p>
+                
+                <ul>
+                    <li>jaké cookies tam používají</li>
+                    <li>jestli je stránka bezpečná</li>
+                    <li>jestli jsou informace aktuální</li>
+                    <li>jestli obchod doručí zboží v pořádku</li>
+                </ul>
+                
+                <p>Odkazy přidávám v dobré víře, že jsou užitečné. Ale když vám Alza pošle poškozenou grafickou kartu, řešte to s Alzou, ne se mnou.</p>
+            </div>
+
+            <!-- NEWSLETTER 
+            <div class="disclaimer-section">
+                <h2><i class="fas fa-envelope"></i> Newsletter</h2>
+                
+                <p>Pokud se přihlásíte k odběru newsletteru, dostanete ode mě e-mail, když vyjde nový článek. <strong class="highlight">Žádný spam, žádné obchodní sdělení, jen užitečný obsah</strong>.</p>
+                
+                <p>Svůj souhlas můžete kdykoli odvolat – každý e-mail má odhlašovací odkaz dole v patičce. Funguje to, testoval jsem to na sobě.</p>
+            </div>
+-->
+            <!-- ZÁVĚREČNÉ SHRNUTÍ -->
+            <div class="disclaimer-section" style="border-bottom: none;">
+                <h2><i class="fas fa-check-double"></i> Shrnutí pro rychlé čtenáře</h2>
+                
+                <ul style="list-style-type: none; margin-left: 0;">
+                    <li style="margin-bottom: 15px;">🔸 <strong>Nejsem profík</strong> – dělám to ve volném čase, nejsem certifikovaný technik</li>
+                    <li style="margin-bottom: 15px;">🔸 <strong>Dělejte na vlastní riziko</strong> – stavba PC, přetaktování, instalace</li>
+                    <li style="margin-bottom: 15px;">🔸 <strong>Jsou to jen názory</strong> – neberte je jako svatou pravdu</li>
+                  <!--   <li style="margin-bottom: 15px;">🔸 <strong>Affiliate odkazy</strong> – podpoříte web, nic vás nestojí</li>-->
+                    <li style="margin-bottom: 15px;">🔸 <strong>Obrázky jsou ilustrační</strong> – reálný produkt se může lišit</li>
+                    <li style="margin-bottom: 15px;">🔸 <strong>Pište mi</strong> – když něčemu nerozumíte, ozvěte se</li>
+                </ul>
+                
+                <div style="background: var(--primary); color: #000; padding: 25px; border-radius: 15px; margin-top: 30px; text-align: center;">
+                    <i class="fas fa-heart" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h3 style="color: #000; margin: 0 0 10px 0;">Děkuji, že jste dočetli až sem</h3>
+                    <p style="color: #000; margin: 0; font-weight: 500;">HerníPrůvodce.cz je web, který dělám rád. A dělám ho pro vás. Pokud máte jakýkoli dotaz, připomínku nebo nápad – napište mi. Vážně.</p>
+                </div>
+                
+                <p style="text-align: center; margin-top: 30px; color: var(--text-light);">
+                    <i class="fas fa-envelope"></i> krustdesing@gmail.com • @HerniPruvodce<br>
+                    <span style="font-size: 0.8rem;">Verze 1.0 – únor 2026</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER (zkopíruj svůj footer) -->
+    <footer>
+     <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>HerníPrůvodce.cz</h3>
+                <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Rychlé odkazy</h3>
+                <ul>
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="#articles">Všechny články</a></li>
+                    <li><a href="#categories">Kategorie</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Kategorie</h3>
+                <ul>
+                    <li><a href="#articles" data-filter="pc-build">PC Sestavy</a></li>
+                    <li><a href="#articles" data-filter="hardware">Hardware</a></li>
+                    <li><a href="#articles" data-filter="ai">AI Technologie</a></li>
+                    <li><a href="#articles" data-filter="tutorial">Návody</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Právní informace</h3>
+                <ul>
+                    <li><a href="ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
+                    <li><a href="podminky_pouziti.html">Podmínky užití</a></li>
+                    <li><a href="#">Reklamní podmínky</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
