@@ -103,6 +103,13 @@
             align-items: center;
             gap: 10px;
         }
+
+        .logo img {
+            height: 3rem;
+            width: auto;
+            display: block;
+        }
+
         .logo i {
             font-size: 2rem;
         }
@@ -588,7 +595,7 @@
         #backToTop {
             position: fixed;
             bottom: 30px;
-            left: 30px;
+            right: 30px;
             background-color: var(--primary);
             color: white;
             width: 50px;
