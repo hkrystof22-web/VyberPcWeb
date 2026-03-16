@@ -7,6 +7,9 @@
     <title>RTX 5070 vs RTX 4070 — má smysl přecházet na novější generaci? | TechPrůvodce.cz</title>
     <link rel="stylesheet" href="../styles/rtx5070_vs_4070.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        
+    </style>
 </head>
 <body>
     <!-- HEADER -->
@@ -16,7 +19,7 @@
                 <i class="fas fa-gamepad"></i>
                 TechPrůvodce
             </a>
-            <button class="mobile-menu-btn" id="menuBtn">
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="mainNav">
@@ -353,39 +356,10 @@
                     </a>
                 </div>
             </section>
-
-            <!-- SDÍLENÍ -->
-            <section class="article-section" style="text-align: center;">
-                <h2>Sdílejte článek</h2>
-                <p>Líbil se vám tento průvodce? Sdílejte ho s přáteli!</p>
-                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
-                    <a href="#" style="background: #1877f2; color: white; padding: 12px 20px; border-radius: 8px;">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="#" style="background: #1da1f2; color: white; padding: 12px 20px; border-radius: 8px;">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="#" style="background: #25d366; color: white; padding: 12px 20px; border-radius: 8px;">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="#" style="background: #7289da; color: white; padding: 12px 20px; border-radius: 8px;">
-                        <i class="fab fa-discord"></i> Discord
-                    </a>
-                </div>
-            </section>
         </main>
 
         <!-- RIGHT SIDEBAR -->
         <aside class="sidebar">
-            <!-- REKLAMNÍ MÍSTO 1 
-            <div class="ad-placeholder">
-                <i class="fas fa-ad"></i>
-                <h3>Reklamní místo</h3>
-                <p>300×300 px</p>
-                <p><small>Vložte zde reklamu (Google AdSense nebo přímou)</small></p>
-            </div>
-            -->
-
             <!-- WIDGET: DALŠÍ ČLÁNKY -->
             <div class="sidebar-widget">
                 <h3 class="sidebar-title"><i class="fas fa-book-open"></i> Další články</h3>
@@ -397,26 +371,6 @@
                     <li><a href="../clanky/monitor.html">▶ Srovnání herních monitorů: 144Hz vs. 240Hz</a></li>
                 </ul>
             </div>
-
-            <!-- REKLAMNÍ MÍSTO 2 
-            <div class="ad-placeholder">
-                <i class="fas fa-ad"></i>
-                <h3>Reklamní místo</h3>
-                <p>300×600 px</p>
-                <p><small>Vložte zde bannerovou reklamu</small></p>
-            </div>
-
-             WIDGET: NEWSLETTER
-            <div class="sidebar-widget">
-                <h3 class="sidebar-title"><i class="fas fa-envelope"></i> Odběr novinek</h3>
-                <p>Dostávejte nejnovější recenze grafických karet přímo do e-mailu.</p>
-                <form style="margin-top: 20px;">
-                    <input type="email" placeholder="Váš e-mail" 
-                           style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--dark-bg); color: var(--text); margin-bottom: 10px;">
-                    <button type="submit" class="product-link" style="width: 100%;">Odebírat</button>
-                </form>
-            </div>
-            -->
         </aside>
     </div>
 
@@ -445,7 +399,6 @@
                         <li><a href="../ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
                         <li><a href="../podminky_pouziti.html">Podmínky použití</a></li>
                         <li><a href="../disclaimer.html">Disclaimer</a></li>
-                    <!--<li><a href="../cookies.html">Cookies</a></li>-->
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -485,24 +438,55 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle - OPRAVENÁ VERZE
         const menuBtn = document.getElementById('menuBtn');
         const mainNav = document.getElementById('mainNav');
-        menuBtn.addEventListener('click', () => {
-            const navUl = mainNav.querySelector('ul');
-            navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+        const menuIcon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mainNav.classList.toggle('show');
+            
+            // Změna ikony (hamburger -> close)
+            if (mainNav.classList.contains('show')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Zavření menu po kliknutí na odkaz
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Zavření menu po kliknutí mimo
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuBtn.contains(e.target) && mainNav.classList.contains('show')) {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
         });
 
         // Adjust menu on resize
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
-                mainNav.querySelector('ul').style.display = 'flex';
-            } else {
-                mainNav.querySelector('ul').style.display = 'none';
+                mainNav.classList.remove('show');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
             }
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll for anchor links - OPRAVENÁ VERZE
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -514,10 +498,6 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    // Close mobile menu if open
-                    if (window.innerWidth <= 768) {
-                        mainNav.querySelector('ul').style.display = 'none';
-                    }
                 }
             });
         });

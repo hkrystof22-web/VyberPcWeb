@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/DLSS_FrameGeneration.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        
+
     </style>
 </head>
 <body>
@@ -19,7 +19,7 @@
                 <i class="fas fa-gamepad"></i>
                 TechPrůvodce
             </a>
-            <button class="mobile-menu-btn" id="menuBtn">
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="mainNav">
@@ -30,7 +30,6 @@
                     <li><a href="#frame-gen"><i class="fas fa-video"></i> Frame Gen</a></li>
                     <li><a href="#vysledky"><i class="fas fa-chart-line"></i> Výsledky</a></li>
                     <li><a href="#zaver"><i class="fas fa-flag-checkered"></i> Závěr</a></li>
-
                 </ul>
             </nav>
         </div>
@@ -330,7 +329,7 @@
                     Cyberpunk 2077 s ray tracing: ultra, všechny efekty zapnuty.</em>
                 </p>
                 
-                <h3>Co znamenají tyto čísla v praxi?</h3>
+                <h3>Co znamenají tato čísla v praxi?</h3>
                 <ul>
                     <li><strong>Nativní 42 FPS:</strong> Hratelné, ale ne plynulé. Ray tracing výrazně zatěžuje GPU.</li>
                     <li><strong>DLSS Quality 68 FPS:</strong> Velmi plynulé, kvalita obrazu téměř identická s nativním.</li>
@@ -474,39 +473,10 @@
                     </a>
                 </div>
             </section>
-
-            <!-- SDÍLENÍ -->
-            <section class="article-section" style="text-align: center;">
-                <h2>Sdílejte článek</h2>
-                <p>Pomohl vám tento průvodce? Sdílejte ho s přáteli, kteří také chtějí porozumět AI technologiím ve hrách!</p>
-                <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
-                    <a href="#" style="background: #1877f2; color: white; padding: 12px 20px; border-radius: 8px;">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="#" style="background: #1da1f2; color: white; padding: 12px 20px; border-radius: 8px;">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="#" style="background: #7289da; color: white; padding: 12px 20px; border-radius: 8px;">
-                        <i class="fab fa-discord"></i> Discord
-                    </a>
-                    <a href="#" style="background: #0a66c2; color: white; padding: 12px 20px; border-radius: 8px;">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
-                    </a>
-                </div>
-            </section>
         </main>
 
         <!-- RIGHT SIDEBAR -->
         <aside class="sidebar">
-            <!-- REKLAMNÍ MÍSTO 1 
-            <div class="ad-placeholder">
-                <i class="fas fa-ad"></i>
-                <h3>Reklamní místo</h3>
-                <p>300×300 px</p>
-                <p><small>Vložte zde reklamu (Google AdSense nebo přímou)</small></p>
-            </div>
-            -->
-
             <!-- WIDGET: DALŠÍ ČLÁNKY -->
             <div class="sidebar-widget">
                 <h3 class="sidebar-title"><i class="fas fa-book-open"></i> Další články</h3>
@@ -514,7 +484,7 @@
                     <li><a href="../clanky/sestavy.html">▶ Nejlepší herní PC sestavy 2026 (od 15k do 60k)</a></li>
                     <li><a href="../clanky/pc_25tisic.html">▶ Herní PC do 25 000 Kč — ideální poměr cena/výkon</a></li>
                     <li><a href="../clanky/ryzen_vs_intel.html">▶ Ryzen 9000 vs. Intel Core Ultra — kdo vyhrál?</a></li>
-                    <li><a href="../clanky/fps.tips.html">▶ Jak zrychlit Windows 11 pro hry — 12 triků</a></li>
+                    <li><a href="../clanky/fps_tips.html">▶ Jak zrychlit Windows 11 pro hry — 12 triků</a></li>
                     <li><a href="../clanky/Hardware_pro_lokalni_ai.html">▶ Hardware pro lokální AI — Stable Diffusion, LLM</a></li>
                 </ul>
             </div>
@@ -547,14 +517,6 @@
                 </div>
             </div>
 
-            <!-- REKLAMNÍ MÍSTO 2 
-            <div class="ad-placeholder">
-                <i class="fas fa-ad"></i>
-                <h3>Reklamní místo</h3>
-                <p>300×600 px</p>
-                <p><small>Vložte zde bannerovou reklamu</small></p>
-            </div>
-                -->
             <!-- WIDGET: NEWSLETTER -->
             <div class="sidebar-widget">
                 <h3 class="sidebar-title"><i class="fas fa-envelope"></i> Odběr novinek</h3>
@@ -586,27 +548,24 @@
                         <li><a href="../clanky/notebooky.html">TOP 5 herních notebooků</a></li>
                     </ul>
                 </div>
-                 <div class="footer-col">
-                <h3>Právní informace</h3>
-                <ul>
-                    <li><a href="../o_mne.html">O mně</a></li>
-                    <li><a href="../ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
-                    <li><a href="../podminky_pouziti.html">Podmínky použití</a></li>
-                    <li><a href="../disclaimer.html">Disclaimer</a></li>
-                <!--<li><a href="../cookies.html">Cookies</a></li>-->
-                </ul>
-            </div>  
-             <div class="footer-col">
+                <div class="footer-col">
+                    <h3>Právní informace</h3>
+                    <ul>
+                        <li><a href="../o_mne.html">O mně</a></li>
+                        <li><a href="../ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
+                        <li><a href="../podminky_pouziti.html">Podmínky použití</a></li>
+                        <li><a href="../disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>  
+                <div class="footer-col">
                     <h3>Kontakt</h3>
-                    <div style="display: flex; gap: 15px; font-size: 1.5rem; margin-top: 20px;">
-                        
-                    </div>
                     <p style="margin-top: 20px; font-size: 0.9rem; color: #95a5a6;">
                         <i class="fas fa-envelope"></i> krustdesing@gmail.com<br>
                     </p>
-             </div>  
+                </div>  
+            </div>
             <div class="copyright">
-                <p>&copy; 2026 TechPrůvodce.cz – Všechna práva vyhrazena. | 
+                <p>&copy; 2026 TechPrůvodce.cz – Všechna práva vyhrazena.</p>
             </div>
         </div>
     </footer>
@@ -630,24 +589,55 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle - OPRAVENÁ VERZE
         const menuBtn = document.getElementById('menuBtn');
         const mainNav = document.getElementById('mainNav');
-        menuBtn.addEventListener('click', () => {
-            const navUl = mainNav.querySelector('ul');
-            navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+        const menuIcon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mainNav.classList.toggle('show');
+            
+            // Změna ikony (hamburger -> close)
+            if (mainNav.classList.contains('show')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Zavření menu po kliknutí na odkaz
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Zavření menu po kliknutí mimo
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuBtn.contains(e.target) && mainNav.classList.contains('show')) {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
         });
 
         // Adjust menu on resize
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
-                mainNav.querySelector('ul').style.display = 'flex';
-            } else {
-                mainNav.querySelector('ul').style.display = 'none';
+                mainNav.classList.remove('show');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
             }
         });
 
-        // Smooth scroll for anchor links
+        // Smooth scroll for anchor links - OPRAVENÁ VERZE
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -659,10 +649,6 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    // Close mobile menu if open
-                    if (window.innerWidth <= 768) {
-                        mainNav.querySelector('ul').style.display = 'none';
-                    }
                 }
             });
         });

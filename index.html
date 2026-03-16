@@ -9,16 +9,888 @@
     <meta name="keywords" content="herní PC, sestavy, NVIDIA, AMD, Intel, AI, DLSS, hardware, recenze, návody">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS VARIABLES (TMavý styl) ===== */
+        :root {
+            --primary: #00b894;
+            --secondary: #0984e3;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #e0e0e0;
+            --text-light: #b0b0b0;
+            --border: #333;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        a:hover {
+            color: var(--primary);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary {
+            background: var(--primary);
+        }
+        .btn-primary:hover {
+            background: #00d1a9;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+        }
+        .btn-outline:hover {
+            background: var(--secondary);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 3rem;
+            width: auto;
+            display: block;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 8px 15px;
+            margin-left: 30px;
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            padding: 5px 10px;
+            width: 200px;
+            outline: none;
+        }
+        .search-box button {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 100px;
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(9, 132, 227, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path fill="%2300b894" opacity="0.1" d="M0,100 C200,0 400,100 600,0 C800,100 1000,0 1000,100 L1000,100 L0,100 Z"/></svg>') bottom no-repeat;
+            background-size: cover;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: #fff;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ===== AD BANNER ===== */
+        .ad-banner {
+            background: linear-gradient(45deg, #1a2a3a, #2c3e50);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+            border: 2px dashed #57606f;
+            color: #b2bec3;
+        }
+        .ad-banner i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .ad-banner h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        /* ===== CATEGORIES ===== */
+        .categories {
+            margin: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #fff;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .category-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .category-card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        .category-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .category-count {
+            display: inline-block;
+            background: rgba(0, 184, 148, 0.2);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* ===== FEATURED ARTICLES ===== */
+        .featured-articles {
+            margin: 60px 0;
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        .article-image {
+            height: 200px;
+            background: linear-gradient(45deg, #2d3436, #636e72);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b2bec3;
+            font-size: 4rem;
+        }
+        .article-content {
+            padding: 25px;
+        }
+        .article-category {
+            display: inline-block;
+            background: rgba(9, 132, 227, 0.2);
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .article-card h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            line-height: 1.4;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+        .read-time {
+            color: var(--primary);
+        }
+
+        /* ===== ALL ARTICLES ===== */
+        .all-articles {
+            margin: 60px 0;
+        }
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: #000;
+            font-weight: bold;
+        }
+        .articles-table {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: var(--primary);
+            color: #000;
+            font-weight: bold;
+            padding: 20px;
+        }
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+            transition: var(--transition);
+        }
+        .table-row:last-child {
+            border-bottom: none;
+        }
+        .table-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .article-title {
+            font-weight: 500;
+            color: #fff;
+        }
+        .article-category-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .pc-build {
+            background: rgba(155, 89, 182, 0.2);
+            color: #9b59b6;
+        }
+        .hardware {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+        .ai {
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+        }
+        .tutorial {
+            background: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+        }
+        .read-btn {
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .read-btn:hover {
+            background: var(--primary);
+        }
+
+        /* ===== WHY US ===== */
+        .why-us {
+            margin: 60px 0;
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(9, 132, 227, 0.1) 100%);
+            border-radius: 20px;
+            padding: 50px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .why-card {
+            text-align: center;
+            padding: 30px;
+        }
+        .why-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .why-card h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter {
+            margin: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(9, 132, 227, 0.05) 100%);
+            border-radius: 20px;
+            padding: 50px;
+        }
+        .newsletter h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+        }
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+        .newsletter-form input {
+            flex: 1;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 15px;
+            border-radius: 8px;
+            outline: none;
+        }
+        .newsletter-form button {
+            background: var(--primary);
+            color: #000;
+            border: none;
+            padding: 0 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .newsletter-form button:hover {
+            background: #00d1a9;
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #0a0a0a;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+        .footer-col ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            color: var(--text-light);
+        }
+        .footer-col a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        .copyright {
+            text-align: center;
+            color: var(--text-light);
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            border: none;
+            box-shadow: var(--shadow);
+        }
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #backToTop:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .table-row, .table-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+        
+        /* ===== MOBILE MENU STYLY ===== */
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(18, 18, 18, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav.show {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 12px;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            nav ul li a:hover {
+                background: var(--primary);
+                color: #000;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .search-box {
+                display: none;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .hero {
+                margin-top: 80px;
+                padding: 50px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .why-us, .newsletter {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* ===== COOKIE BANNER ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border-top: 3px solid var(--primary);
+            padding: 25px;
+            z-index: 9999;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cookie-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cookie-content h3 i {
+            font-size: 1.5rem;
+        }
+
+        .cookie-content > p {
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .cookie-categories {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .cookie-category {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .cookie-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .cookie-category input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        .cookie-category label {
+            font-weight: bold;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        .cookie-desc {
+            margin: 8px 0 0 25px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0 15px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-buttons .btn {
+            padding: 12px 24px;
+        }
+
+        .btn-text {
+            background: none;
+            color: var(--text-light);
+            border: none;
+        }
+
+        .btn-text:hover {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .cookie-links {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .cookie-links a {
+            color: var(--secondary);
+            margin: 0 10px;
+        }
+
+        /* Cookie nastavení tlačítko v patičce */
+        .cookie-settings-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9998;
+            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cookie-settings-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+        }
+    </style>
 </head>                                                                         
 <body>
     <!-- HEADER -->
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">   
-                <img src="images/logo2.png" alt="">
+                <img src="images/logo2.webp" alt="TechPrůvodce logo">
                 TechPrůvodce
             </a>
-            <button class="mobile-menu-btn" id="menuBtn">
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="mainNav">
@@ -53,20 +925,9 @@
                     <span class="stat-number">50+</span>
                     <span class="stat-label">Porovnaných produktů</span>
                 </div>
-                
             </div>
         </div>
     </section>
-
-    <!-- REKLAMNÍ BANNER 
-    <div class="container">
-        <div class="ad-banner">
-            <i class="fas fa-ad"></i>
-            <h3>Reklamní místo 970×250</h3>
-            <p>Ideální pro Google AdSense nebo přímou reklamu</p>
-        </div>
-    </div>
-    -->
 
     <!-- KATEGORIE -->
     <section class="categories" id="categories">
@@ -109,7 +970,7 @@
                 <!-- Článek 1 -->
                 <div class="article-card">
                     <div class="article-image">
-                        <img src="images/pc_sestavy.png" alt="PC Sestavy">
+                        <img src="images/pc_sestavy.webp" alt="PC Sestavy">
                     </div>
                     <div class="article-content">
                         <span class="article-category">PC Sestavy</span>
@@ -125,7 +986,7 @@
                 <!-- Článek 2 -->
                 <div class="article-card">
                     <div class="article-image">
-                        <img src="images/pc_25k.png" alt="">
+                        <img src="images/pc_25k.webp" alt="Herní PC do 25 000 Kč">
                     </div>
                     <div class="article-content">
                         <span class="article-category">PC Sestavy</span>
@@ -141,7 +1002,7 @@
                 <!-- Článek 3 -->
                 <div class="article-card">
                     <div class="article-image">
-                       <img src="images/ai_technologie.png" alt="">
+                       <img src="images/ai_technologie.webp" alt="AI technologie">
                     </div>
                     <div class="article-content">
                         <span class="article-category">AI Technologie</span>
@@ -155,396 +1016,374 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- REKLAMNÍ BANNER 2 
-<div class="container">
-    <div class="ad-banner">
-        <i class="fas fa-shopping-cart"></i>
-        <h3>Doporučené obchody s hardwarem</h3>
-        <p>Nejlepší ceny a dostupnost komponent (affiliate odkazy)</p>
-    </div>
-</div>
--->
-
-<!-- VŠECHNY ČLÁNKY -->
-<section class="all-articles" id="articles">
-    <div class="container">
-        <h2 class="section-title">Všechny články (10)</h2>
-        
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all">Vše</button>
-            <button class="filter-btn" data-filter="pc-build">PC Sestavy</button>
-            <button class="filter-btn" data-filter="hardware">Hardware</button>
-            <button class="filter-btn" data-filter="ai">AI</button>
-            <button class="filter-btn" data-filter="tutorial">Návody</button>
-        </div>
-        
-        <div class="articles-table">
-            <div class="table-header">
-                <div>Název článku</div>
-                <div>Kategorie</div>
-                <div>Akce</div>
+    <!-- VŠECHNY ČLÁNKY -->
+    <section class="all-articles" id="articles">
+        <div class="container">
+            <h2 class="section-title">Všechny články (10)</h2>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Vše</button>
+                <button class="filter-btn" data-filter="pc-build">PC Sestavy</button>
+                <button class="filter-btn" data-filter="hardware">Hardware</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+                <button class="filter-btn" data-filter="tutorial">Návody</button>
             </div>
             
-            <!-- Článek 1 -->
-            <div class="table-row" data-category="pc-build">
-                <div class="article-title">Nejlepší herní PC sestavy 2026 — od 15 000 do 60 000 Kč</div>
-                <div><span class="article-category-badge pc-build">PC Sestavy</span></div>
-                <div><a href="clanky/sestavy.html" class="read-btn">Přečíst</a></div>
-            </div>
-            
-            <!-- Článek 2 -->
-            <div class="table-row" data-category="pc-build">
-                <div class="article-title">Herní PC do 25 000 Kč — ideální poměr cena/výkon</div>
-                <div><span class="article-category-badge pc-build">PC Sestavy</span></div>
-                <div><a href="clanky/pc_25tisic.html" class="read-btn">Přečíst</a></div>
-            </div>
-            
-            <!-- Článek 3 -->
-            <div class="table-row" data-category="hardware">
-                <div class="article-title">TOP 5 herních notebooků pro studenty: Jaký vybrat na školu i hraní?</div>
-                <div><span class="article-category-badge hardware">Hardware</span></div>
-                <div><a href="clanky/notebooky.html" class="read-btn">Přečíst</a></div>
-            </div>
-            
-            <!-- Článek 4 -->
-            <div class="table-row" data-category="hardware">
-                <div class="article-title">NVIDIA RTX 5070 vs. RTX 4070: Vyplatí se nákup nové generace?</div>
-                <div><span class="article-category-badge hardware">Hardware</span></div>
-                <div><a href="clanky/rtx5070_vs_4070.html" class="read-btn">Přečíst</a></div>
-            </div>
-            
-            <!-- Článek 5 -->
-            <div class="table-row" data-category="hardware">
-                <div class="article-title">AMD Ryzen 9000 vs. Intel Core Ultra: Kdo vyhrál souboj o nejlepší herní CPU?</div>
-                <div><span class="article-category-badge hardware">Hardware</span></div>
-                <div><a href="clanky/ryzen_vs_intel.html" class="read-btn">Přečíst</a></div>
-            </div>
-            
-            <!-- Článek 6 -->
-            <div class="table-row" data-category="hardware">
-                <div class="article-title">Srovnání nejlepších herních monitorů: 144Hz vs. 240Hz a k čemu je to dobré?</div>
-                <div><span class="article-category-badge hardware">Hardware</span></div>
-                <div><a href="clanky/monitor.html" class="read-btn">Přečíst</a></div>
-            </div>
-            
-            <!-- Článek 7 -->
-            <div class="table-row" data-category="tutorial">
-                <div class="article-title">Jak si postavit herní PC svépomocí: Krok za krokem (2026)</div>
-                <div><span class="article-category-badge tutorial">Návody</span></div>
-                <div><a href="clanky/jak_postavit_pc.html" class="read-btn">Přečíst</a></div>
-            </div>
-            
-            <!-- Článek 8 -->
-            <div class="table-row" data-category="tutorial">
-                <div class="article-title">Jak zrychlit Windows 11 pro hry: 12 triků, které vám přidají FPS zadarmo</div>
-                <div><span class="article-category-badge tutorial">Návody</span></div>
-                <div><a href="clanky/fps_tips.html" class="read-btn">Přečíst</a></div>
-            </div>
-            
-            <!-- Článek 9 -->
-            <div class="table-row" data-category="ai">
-                <div class="article-title">Co je to DLSS a Frame Generation? Jak technologie AI mění hraní her</div>
-                <div><span class="article-category-badge ai">AI</span></div>
-                <div><a href="clanky/DLSS_FrameGeneration.html" class="read-btn">Přečíst</a></div>
-            </div>
-            
-            <!-- Článek 10 -->
-            <div class="table-row" data-category="ai">
-                <div class="article-title">Nejlepší hardware pro lokální AI: Jakou grafiku potřebujete pro generování obrázků a textu?</div>
-                <div><span class="article-category-badge ai">AI</span></div>
-                <div><a href="clanky/Hardware_pro_lokalni_ai.html" class="read-btn">Přečíst</a></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PROČ NÁS ČÍST -->
-<section class="why-us">
-    <div class="container">
-        <h2 class="section-title">Proč číst právě u nás?</h2>
-        <div class="why-grid">
-            <div class="why-card">
-                <i class="fas fa-calendar-alt why-icon"></i>
-                <h3>Aktuální pro rok 2026</h3>
-                <p>Informace o nejnovějším hardwaru, technologiích a trendech. Neztrácíme čas zastaralými informacemi.</p>
-            </div>
-            <div class="why-card">
-                <i class="fas fa-chart-line why-icon"></i>
-                <h3>Praxe místo teorie</h3>
-                <p>Reálné testy, měření FPS, praktické návody. Nejen suchá specifikace, ale skutečné zkušenosti.</p>
-            </div>
-            <div class="why-card">
-                <i class="fas fa-balance-scale why-icon"></i>
-                <h3>Žádný bias</h3>
-                <p>Nejsme sponzorováni výrobci. Jen fakta, čísla a nezávislá doporučení pro vás.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>TechPrůvodce.cz</h3>
-                <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
+            <div class="articles-table">
+                <div class="table-header">
+                    <div>Název článku</div>
+                    <div>Kategorie</div>
+                    <div>Akce</div>
+                </div>
                 
+                <!-- Článek 1 -->
+                <div class="table-row" data-category="pc-build">
+                    <div class="article-title">Nejlepší herní PC sestavy 2026 — od 15 000 do 60 000 Kč</div>
+                    <div><span class="article-category-badge pc-build">PC Sestavy</span></div>
+                    <div><a href="clanky/sestavy.html" class="read-btn">Přečíst</a></div>
+                </div>
+                
+                <!-- Článek 2 -->
+                <div class="table-row" data-category="pc-build">
+                    <div class="article-title">Herní PC do 25 000 Kč — ideální poměr cena/výkon</div>
+                    <div><span class="article-category-badge pc-build">PC Sestavy</span></div>
+                    <div><a href="clanky/pc_25tisic.html" class="read-btn">Přečíst</a></div>
+                </div>
+                
+                <!-- Článek 3 -->
+                <div class="table-row" data-category="hardware">
+                    <div class="article-title">TOP 5 herních notebooků pro studenty: Jaký vybrat na školu i hraní?</div>
+                    <div><span class="article-category-badge hardware">Hardware</span></div>
+                    <div><a href="clanky/notebooky.html" class="read-btn">Přečíst</a></div>
+                </div>
+                
+                <!-- Článek 4 -->
+                <div class="table-row" data-category="hardware">
+                    <div class="article-title">NVIDIA RTX 5070 vs. RTX 4070: Vyplatí se nákup nové generace?</div>
+                    <div><span class="article-category-badge hardware">Hardware</span></div>
+                    <div><a href="clanky/rtx5070_vs_4070.html" class="read-btn">Přečíst</a></div>
+                </div>
+                
+                <!-- Článek 5 -->
+                <div class="table-row" data-category="hardware">
+                    <div class="article-title">AMD Ryzen 9000 vs. Intel Core Ultra: Kdo vyhrál souboj o nejlepší herní CPU?</div>
+                    <div><span class="article-category-badge hardware">Hardware</span></div>
+                    <div><a href="clanky/ryzen_vs_intel.html" class="read-btn">Přečíst</a></div>
+                </div>
+                
+                <!-- Článek 6 -->
+                <div class="table-row" data-category="hardware">
+                    <div class="article-title">Srovnání nejlepších herních monitorů: 144Hz vs. 240Hz a k čemu je to dobré?</div>
+                    <div><span class="article-category-badge hardware">Hardware</span></div>
+                    <div><a href="clanky/monitor.html" class="read-btn">Přečíst</a></div>
+                </div>
+                
+                <!-- Článek 7 -->
+                <div class="table-row" data-category="tutorial">
+                    <div class="article-title">Jak si postavit herní PC svépomocí: Krok za krokem (2026)</div>
+                    <div><span class="article-category-badge tutorial">Návody</span></div>
+                    <div><a href="clanky/jak_postavit_pc.html" class="read-btn">Přečíst</a></div>
+                </div>
+                
+                <!-- Článek 8 -->
+                <div class="table-row" data-category="tutorial">
+                    <div class="article-title">Jak zrychlit Windows 11 pro hry: 12 triků, které vám přidají FPS zadarmo</div>
+                    <div><span class="article-category-badge tutorial">Návody</span></div>
+                    <div><a href="clanky/fps_tips.html" class="read-btn">Přečíst</a></div>
+                </div>
+                
+                <!-- Článek 9 -->
+                <div class="table-row" data-category="ai">
+                    <div class="article-title">Co je to DLSS a Frame Generation? Jak technologie AI mění hraní her</div>
+                    <div><span class="article-category-badge ai">AI</span></div>
+                    <div><a href="clanky/DLSS_FrameGeneration.html" class="read-btn">Přečíst</a></div>
+                </div>
+                
+                <!-- Článek 10 -->
+                <div class="table-row" data-category="ai">
+                    <div class="article-title">Nejlepší hardware pro lokální AI: Jakou grafiku potřebujete pro generování obrázků a textu?</div>
+                    <div><span class="article-category-badge ai">AI</span></div>
+                    <div><a href="clanky/Hardware_pro_lokalni_ai.html" class="read-btn">Přečíst</a></div>
+                </div>
             </div>
-            <div class="footer-col">
-                <h3>Rychlé odkazy</h3>
-                <ul>
-                   <li><a href="../index.html">Domů</a></li>
-                        <li><a href="../clanky/sestavy.html">PC Sestavy</a></li>
-                        <li><a href="../clanky/pc_25tisic.html">PC za 25 000 Kč</a></li>
-                        <li><a href="../clanky/fps_tips.html">FPS Tipy</a></li>
-                        <li><a href="../clanky/notebooky.html">TOP 5 herních notebooků</a></li>
-                </ul>
+        </div>
+    </section>
+
+    <!-- PROČ NÁS ČÍST -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title">Proč číst právě u nás?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fas fa-calendar-alt why-icon"></i>
+                    <h3>Aktuální pro rok 2026</h3>
+                    <p>Informace o nejnovějším hardwaru, technologiích a trendech. Neztrácíme čas zastaralými informacemi.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fas fa-chart-line why-icon"></i>
+                    <h3>Praxe místo teorie</h3>
+                    <p>Reálné testy, měření FPS, praktické návody. Nejen suchá specifikace, ale skutečné zkušenosti.</p>
+                </div>
+                <div class="why-card">
+                    <i class="fas fa-balance-scale why-icon"></i>
+                    <h3>Žádný bias</h3>
+                    <p>Nejsme sponzorováni výrobci. Jen fakta, čísla a nezávislá doporučení pro vás.</p>
+                </div>
             </div>
-            <div class="footer-col">
-                <h3>Právní informace</h3>
-                <ul>
-                    <li><a href="../o_mne.html">O mně</a></li>
-                    <li><a href="../ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
-                    <li><a href="../podminky_pouziti.html">Podmínky použití</a></li>
-                    <li><a href="../disclaimer.html">Disclaimer</a></li>
-                <!--<li><a href="../cookies.html">Cookies</a></li>-->
-                </ul>
-            </div>
-            <div class="footer-col">
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>TechPrůvodce.cz</h3>
+                    <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="clanky/sestavy.html">PC Sestavy</a></li>
+                        <li><a href="clanky/pc_25tisic.html">PC za 25 000 Kč</a></li>
+                        <li><a href="clanky/fps_tips.html">FPS Tipy</a></li>
+                        <li><a href="clanky/notebooky.html">TOP 5 herních notebooků</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Právní informace</h3>
+                    <ul>
+                        <li><a href="o_mne.html">O mně</a></li>
+                        <li><a href="ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
+                        <li><a href="podminky_pouziti.html">Podmínky použití</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
                     <h3>Kontakt</h3>
-                    <div style="display: flex; gap: 15px; font-size: 1.5rem; margin-top: 20px;">
-                        
-                    </div>
                     <p style="margin-top: 20px; font-size: 0.9rem; color: #95a5a6;">
                         <i class="fas fa-envelope"></i> krustdesing@gmail.com<br>
                     </p>
                 </div>  
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 TechPrůvodce.cz – Všechna práva vyhrazena. | 
+                <strong>Upozornění:</strong> Tento web obsahuje affiliate odkazy. Nákupem přes ně podpoříte provoz webu bez navýšení ceny pro vás.</p>
+            </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2026 TechPrůvodce.cz – Všechna práva vyhrazena. | 
-            <strong>Upozornění:</strong> Tento web obsahuje affiliate odkazy. Nákupem přes ně podpoříte provoz webu bez navýšení ceny pro vás.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- BACK TO TOP BUTTON -->
-<button id="backToTop">
-    <i class="fas fa-chevron-up"></i>
-</button>
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-<script>
-    // Back to Top Button
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    });
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mainNav = document.getElementById('mainNav');
-    menuBtn.addEventListener('click', () => {
-        const navUl = mainNav.querySelector('ul');
-        navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
-    });
+        // Mobile Menu Toggle - OPRAVENÁ VERZE
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const menuIcon = menuBtn.querySelector('i');
 
-    // Adjust menu on resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            mainNav.querySelector('ul').style.display = 'flex';
-        } else {
-            mainNav.querySelector('ul').style.display = 'none';
-        }
-    });
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mainNav.classList.toggle('show');
+            
+            // Změna ikony (hamburger -> close)
+            if (mainNav.classList.contains('show')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
-                if (window.innerWidth <= 768) {
-                    mainNav.querySelector('ul').style.display = 'none';
+        // Zavření menu po kliknutí na odkaz
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Zavření menu po kliknutí mimo
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuBtn.contains(e.target) && mainNav.classList.contains('show')) {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Adjust menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mainNav.classList.remove('show');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
                 }
             }
         });
-    });
 
-    // Filter articles
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const tableRows = document.querySelectorAll('.table-row');
-    
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            const filter = this.getAttribute('data-filter');
-            
-            tableRows.forEach(row => {
-                if (filter === 'all') {
-                    row.style.display = 'grid';
-                } else {
+        // Smooth scroll for anchor links - OPRAVENÁ VERZE (bez starého kódu)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Filter articles
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const tableRows = document.querySelectorAll('.table-row');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                tableRows.forEach(row => {
+                    if (filter === 'all') {
+                        row.style.display = 'grid';
+                    } else {
+                        const category = row.getAttribute('data-category');
+                        if (category === filter) {
+                            row.style.display = 'grid';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Filter from category links in footer
+        document.querySelectorAll('.footer-col a[data-filter]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                filterBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-filter') === filter) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                // Filter articles
+                tableRows.forEach(row => {
                     const category = row.getAttribute('data-category');
                     if (category === filter) {
                         row.style.display = 'grid';
                     } else {
                         row.style.display = 'none';
                     }
-                }
+                });
+                
+                // Scroll to articles section
+                document.querySelector('#articles').scrollIntoView({ behavior: 'smooth' });
             });
         });
-    });
 
-    // Filter from category links in footer
-    document.querySelectorAll('.footer-col a[data-filter]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const filter = this.getAttribute('data-filter');
+        // Search functionality
+        const searchInput = document.querySelector('.search-box input');
+        const searchBtn = document.querySelector('.search-box button');
+        
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            if (!query) return;
             
-            // Update active button
-            filterBtns.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-filter') === filter) {
-                    btn.classList.add('active');
-                }
-            });
-            
-            // Filter articles
+            // Filter articles based on search query
+            let found = false;
             tableRows.forEach(row => {
-                const category = row.getAttribute('data-category');
-                if (category === filter) {
+                const title = row.querySelector('.article-title').textContent.toLowerCase();
+                if (title.includes(query)) {
                     row.style.display = 'grid';
+                    row.style.backgroundColor = 'rgba(0, 184, 148, 0.1)';
+                    found = true;
+                    
+                    // Scroll to the article
+                    setTimeout(() => {
+                        row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
                 } else {
                     row.style.display = 'none';
                 }
             });
             
-            // Scroll to articles section
-            document.querySelector('#articles').scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-
-    // Newsletter form submission
-    const newsletterForm = document.querySelector('.newsletter-form');
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = this.querySelector('input').value;
-        
-        // Simple validation
-        if (email && email.includes('@')) {
-            alert('Děkujeme za přihlášení k odběru! Potvrzovací e-mail vám přijde během pár minut.');
-            this.querySelector('input').value = '';
+            // Reset all filters
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
             
-            // In a real app, you would send this to your backend
-            console.log('Newsletter signup:', email);
-        } else {
-            alert('Zadejte platný e-mail.');
-        }
-    });
-
-    // Search functionality
-    const searchInput = document.querySelector('.search-box input');
-    const searchBtn = document.querySelector('.search-box button');
-    
-    searchBtn.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
-    
-    function performSearch() {
-        const query = searchInput.value.toLowerCase().trim();
-        if (!query) return;
-        
-        // Filter articles based on search query
-        let found = false;
-        tableRows.forEach(row => {
-            const title = row.querySelector('.article-title').textContent.toLowerCase();
-            if (title.includes(query)) {
-                row.style.display = 'grid';
-                row.style.backgroundColor = 'rgba(0, 184, 148, 0.1)';
-                found = true;
-                
-                // Scroll to the article
-                setTimeout(() => {
-                    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
-            } else {
-                row.style.display = 'none';
+            if (!found) {
+                alert('Žádný článek neodpovídá vašemu hledání.');
+                // Show all articles
+                tableRows.forEach(row => {
+                    row.style.display = 'grid';
+                    row.style.backgroundColor = '';
+                });
+                document.querySelector('.filter-btn[data-filter="all"]').click();
             }
-        });
-        
-        // Reset all filters
-        filterBtns.forEach(btn => btn.classList.remove('active'));
-        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-        
-        if (!found) {
-            alert('Žádný článek neodpovídá vašemu hledání.');
-            // Show all articles
-            tableRows.forEach(row => {
-                row.style.display = 'grid';
-                row.style.backgroundColor = '';
-            });
-            document.querySelector('.filter-btn[data-filter="all"]').click();
         }
-    }
 
-    // Article card click tracking
-    document.querySelectorAll('.article-card, .read-btn').forEach(element => {
-        element.addEventListener('click', function(e) {
-            if (this.tagName === 'A') return; // Let link clicks proceed normally
-            
-            const articleTitle = this.closest('.article-card').querySelector('h3').textContent;
-            console.log('Článek prohlížen:', articleTitle);
-            
-            // In a real app, you would send this to analytics
+        // Category card clicks
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const category = this.querySelector('h3').textContent;
+                console.log('Kategorie vybrána:', category);
+                
+                // Scroll to articles and filter by category
+                document.querySelector('#articles').scrollIntoView({ behavior: 'smooth' });
+                
+                // Determine which filter to activate
+                let filter = 'all';
+                if (category.includes('PC Sestavy')) filter = 'pc-build';
+                else if (category.includes('Hardware')) filter = 'hardware';
+                else if (category.includes('AI')) filter = 'ai';
+                else if (category.includes('Návody')) filter = 'tutorial';
+                
+                // Trigger filter click
+                document.querySelector(`.filter-btn[data-filter="${filter}"]`).click();
+            });
         });
-    });
-
-    // Category card clicks
-    document.querySelectorAll('.category-card').forEach(card => {
-        card.addEventListener('click', function() {
-            const category = this.querySelector('h3').textContent;
-            console.log('Kategorie vybrána:', category);
-            
-            // Scroll to articles and filter by category
-            document.querySelector('#articles').scrollIntoView({ behavior: 'smooth' });
-            
-            // Determine which filter to activate
-            let filter = 'all';
-            if (category.includes('PC Sestavy')) filter = 'pc-build';
-            else if (category.includes('Hardware')) filter = 'hardware';
-            else if (category.includes('AI')) filter = 'ai';
-            else if (category.includes('Návody')) filter = 'tutorial';
-            
-            // Trigger filter click
-            document.querySelector(`.filter-btn[data-filter="${filter}"]`).click();
-        });
-    });
-
-</script>
-</div>
+    </script>
 </body>
 </html>

@@ -8,6 +8,155 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ===== CSS VARIABLES (TMavý styl) ===== */
+        :root {
+            --primary: #00b894;
+            --secondary: #0984e3;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #e0e0e0;
+            --text-light: #b0b0b0;
+            --border: #333;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        a:hover {
+            color: var(--primary);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER ===== */
+         header {
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i {
+            font-size: 2rem;
+        }
+        
+        /* ===== UPRAVENÉ MENU ===== */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        nav li {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+            padding: 12px 0;
+            display: block;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a i {
+            margin-right: 8px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 8px 15px;
+            margin-left: 30px;
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            padding: 5px 10px;
+            width: 200px;
+            outline: none;
+        }
+        .search-box button {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* ===== TERMS CONTAINER ===== */
         .terms-container {
             max-width: 800px;
             margin: 120px auto 60px;
@@ -18,6 +167,7 @@
             border-radius: 20px;
             padding: 40px;
             border: 1px solid var(--border);
+            box-shadow: var(--shadow);
         }
         .terms-header {
             text-align: center;
@@ -74,25 +224,171 @@
             border-radius: 10px;
             margin-top: 30px;
         }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #0a0a0a;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+        .footer-col ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            color: var(--text-light);
+        }
+        .footer-col a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        .copyright {
+            text-align: center;
+            color: var(--text-light);
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            border: none;
+            box-shadow: var(--shadow);
+        }
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #backToTop:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* ===== MOBILE MENU STYLY ===== */
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(18, 18, 18, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav.show {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 12px;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            nav ul li a:hover {
+                background: var(--primary);
+                color: #000;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .search-box {
+                display: none;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .terms-container {
+                margin-top: 100px;
+            }
+            
+            .terms-header h1 {
+                font-size: 2rem;
+            }
+            
+            .terms-card {
+                padding: 25px;
+            }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .terms-header h1 {
+                font-size: 2.2rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- HEADER -->
     <header>
-      <div class="container header-container">
+        <div class="container header-container">
             <a href="index.html" class="logo">
                 <i class="fas fa-gamepad"></i>
                 TechPrůvodce
             </a>
-            <button class="mobile-menu-btn" id="menuBtn">
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Domů</a></li>
-                    <li><a href="#articles"><i class="fas fa-newspaper"></i> Články</a></li>
-                    <li><a href="#categories"><i class="fas fa-th-large"></i> Kategorie</a></li>
-                    <li><a href="#newsletter"><i class="fas fa-envelope"></i> Newsletter</a></li>
+                    <li><a href="index.html#articles"><i class="fas fa-newspaper"></i> Články</a></li>
+                    <li><a href="index.html#categories"><i class="fas fa-th-large"></i> Kategorie</a></li>
                 </ul>
             </nav>
             <div class="search-box">
@@ -164,13 +460,12 @@
                 </ul>
             </div>
 
-            <!-- AFFILIATE ODKAZY
+            <!-- AFFILIATE ODKAZY -->
             <div class="terms-section">
                 <h2><i class="fas fa-hand-holding-usd"></i> Affiliate odkazy</h2>
                 <p>Některé odkazy na e-shopy jsou tzv. affiliate odkazy. Pokud přes ně nakoupíte, můžu získat malou provizi – <strong style="color: #fff;">cena pro vás je stejná</strong>, jako byste šli na obchod přímo.</p>
                 <p>Provize mi pomáhá pokrýt náklady na provoz webu a čas strávený testováním. Zařazení produktu do článku není placené. Nikdy nedoporučuji něco, co bych si nekoupil sám.</p>
             </div>
-             -->
 
             <!-- ZÁVĚR -->
             <div class="terms-section" style="border-bottom: none;">
@@ -188,33 +483,33 @@
 
     <!-- FOOTER -->
     <footer>
-       <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>TechPrůvodce.cz</h3>
-                <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>      
-            </div>
-            <div class="footer-col">
-                <h3>Rychlé odkazy</h3>
-                <ul>
-                    <li><a href="../index.html">Domů</a></li>
-                        <li><a href="../clanky/sestavy.html">PC Sestavy</a></li>
-                        <li><a href="../clanky/pc_25tisic.html">PC za 25 000 Kč</a></li>
-                        <li><a href="../clanky/fps_tips.html">FPS Tipy</a></li>
-                        <li><a href="../clanky/notebooky.html">TOP 5 herních notebooků</a></li>
-                </ul>
-            </div>   
-            <div class="footer-col">
-                <h3>Právní informace</h3>
-                <ul>
-                    <li><a href="../o_mne.html">O mně</a></li>
-                    <li><a href="../ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
-                    <li><a href="../podminky_pouziti.html">Podmínky použití</a></li>
-                    <li><a href="../disclaimer.html">Disclaimer</a></li>
-                <!--<li><a href="../cookies.html">Cookies</a></li>-->
-                </ul>
-            </div>
-            <div class="footer-col">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>TechPrůvodce.cz</h3>
+                    <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>      
+                </div>
+                <div class="footer-col">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="clanky/sestavy.html">PC Sestavy</a></li>
+                        <li><a href="clanky/pc_25tisic.html">PC za 25 000 Kč</a></li>
+                        <li><a href="clanky/fps_tips.html">FPS Tipy</a></li>
+                        <li><a href="clanky/notebooky.html">TOP 5 herních notebooků</a></li>
+                    </ul>
+                </div>   
+                <div class="footer-col">
+                    <h3>Právní informace</h3>
+                    <ul>
+                        <li><a href="o_mne.html">O mně</a></li>
+                        <li><a href="ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
+                        <li><a href="podminky_pouziti.html">Podmínky použití</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <!--<li><a href="cookies.html">Cookies</a></li>-->
+                    </ul>
+                </div>
+                <div class="footer-col">
                     <h3>Kontakt</h3>
                     <div style="display: flex; gap: 15px; font-size: 1.5rem; margin-top: 20px;">
                         
@@ -222,15 +517,83 @@
                     <p style="margin-top: 20px; font-size: 0.9rem; color: #95a5a6;">
                         <i class="fas fa-envelope"></i> krustdesing@gmail.com<br>
                     </p>
-             </div>  
+                </div>  
+            </div>
+            <!--
+            <div class="copyright">
+                <p>&copy; 2026 TechPrůvodce.cz – Všechna práva vyhrazena. | 
+                <strong>Upozornění:</strong> Tento web obsahuje affiliate odkazy. Nákupem přes ně podpoříte provoz webu bez navýšení ceny pro vás.</p>
+            </div>
+            -->
         </div>
-         <!--
-        <div class="copyright">
-            <p>&copy; 2026 TechPrůvodce.cz – Všechna práva vyhrazena. | 
-            <strong>Upozornění:</strong> Tento web obsahuje affiliate odkazy. Nákupem přes ně podpoříte provoz webu bez navýšení ceny pro vás.</p>
-        </div>
-        -->
-    </div>
     </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Menu Toggle - OPRAVENÁ VERZE
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const menuIcon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mainNav.classList.toggle('show');
+            
+            // Změna ikony (hamburger -> close)
+            if (mainNav.classList.contains('show')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Zavření menu po kliknutí na odkaz
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Zavření menu po kliknutí mimo
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuBtn.contains(e.target) && mainNav.classList.contains('show')) {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Adjust menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mainNav.classList.remove('show');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            }
+        });
+    </script>
 </body>
 </html>

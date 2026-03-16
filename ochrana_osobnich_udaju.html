@@ -4,44 +4,189 @@
     <link rel="icon" type="image/png" href="images/logo2.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ochrana osobních údajů - TechPrůvodce.cz</title>
+    <title>O mně - TechPrůvodce.cz</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .privacy-container {
+        /* ===== CSS VARIABLES (TMavý styl) ===== */
+        :root {
+            --primary: #00b894;
+            --secondary: #0984e3;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text: #e0e0e0;
+            --text-light: #b0b0b0;
+            --border: #333;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        a:hover {
+            color: var(--primary);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER ===== */
+         header {
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i {
+            font-size: 2rem;
+        }
+        
+        /* ===== UPRAVENÉ MENU ===== */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        nav li {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+            padding: 12px 0;
+            display: block;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a i {
+            margin-right: 8px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 8px 15px;
+            margin-left: 30px;
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            padding: 5px 10px;
+            width: 200px;
+            outline: none;
+        }
+        .search-box button {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* ===== ABOUT CONTAINER ===== */
+        .about-container {
             max-width: 800px;
             margin: 120px auto 60px;
             padding: 0 20px;
         }
-        .privacy-card {
+        .about-card {
             background: var(--card-bg);
             border-radius: 20px;
             padding: 40px;
             border: 1px solid var(--border);
+            box-shadow: var(--shadow);
         }
-        .privacy-header {
+        .about-header {
             text-align: center;
             margin-bottom: 40px;
         }
-        .privacy-header i {
+        .about-header i {
             font-size: 4rem;
             color: var(--primary);
             margin-bottom: 20px;
         }
-        .privacy-header h1 {
+        .about-header h1 {
             font-size: 2.5rem;
             color: #fff;
             margin-bottom: 10px;
         }
-        .privacy-section {
+        .about-section {
             margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
         }
-        .privacy-section:last-child {
-            border-bottom: none;
-        }
-        .privacy-section h2 {
+        .about-section h2 {
             color: var(--primary);
             font-size: 1.5rem;
             margin-bottom: 15px;
@@ -49,238 +194,276 @@
             align-items: center;
             gap: 10px;
         }
-        .privacy-section h3 {
-            color: #fff;
-            margin: 20px 0 10px;
-            font-size: 1.2rem;
-        }
-        .privacy-section p, li {
+        .about-section p {
             color: var(--text-light);
             line-height: 1.8;
+            margin-bottom: 20px;
         }
-        .privacy-section ul {
+        .about-section ul {
+            color: var(--text-light);
             margin-left: 20px;
-            margin-top: 10px;
+            line-height: 2;
         }
-        .privacy-section li {
-            margin-bottom: 8px;
+        .about-section li {
+            margin-bottom: 5px;
         }
-        .status-badge {
-            display: inline-block;
-            background: #f39c12;
-            color: #000;
-            font-weight: bold;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-left: 15px;
-            vertical-align: middle;
-        }
-        .future-box {
-            background: rgba(52, 152, 219, 0.1);
-            border-left: 4px solid #3498db;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        .contact-privacy {
+        .contact-box {
             background: rgba(0, 184, 148, 0.1);
+            border-left: 4px solid var(--primary);
             padding: 20px;
             border-radius: 10px;
             margin-top: 30px;
+        }
+        .contact-box i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        .contact-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .contact-box p {
+            color: var(--text-light);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #0a0a0a;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+        .footer-col ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            color: var(--text-light);
+        }
+        .footer-col a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        .copyright {
+            text-align: center;
+            color: var(--text-light);
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            border: none;
+            box-shadow: var(--shadow);
+        }
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #backToTop:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* ===== MOBILE MENU STYLY ===== */
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(18, 18, 18, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav.show {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 12px;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            nav ul li a:hover {
+                background: var(--primary);
+                color: #000;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .about-container {
+                margin-top: 100px;
+            }
+            
+            .about-header h1 {
+                font-size: 2rem;
+            }
+            
+            .about-card {
+                padding: 25px;
+            }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .about-header h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- HEADER -->
     <header>
-       <div class="container header-container">
+        <div class="container header-container">
             <a href="index.html" class="logo">
                 <i class="fas fa-gamepad"></i>
                 TechPrůvodce
             </a>
-            <button class="mobile-menu-btn" id="menuBtn">
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="mainNav">
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Domů</a></li>
-                    <li><a href="#articles"><i class="fas fa-newspaper"></i> Články</a></li>
-                    <li><a href="#categories"><i class="fas fa-th-large"></i> Kategorie</a></li>
-                    <li><a href="#newsletter"><i class="fas fa-envelope"></i> Newsletter</a></li>
+                    <li><a href="index.html#articles"><i class="fas fa-newspaper"></i> Články</a></li>
+                    <li><a href="index.html#categories"><i class="fas fa-th-large"></i> Kategorie</a></li>
                 </ul>
             </nav>
-            <div class="search-box">
-                <input type="text" placeholder="Hledat články...">
-                <button><i class="fas fa-search"></i></button>
-            </div>
         </div>
     </header>
 
-    <div class="privacy-container">
-       <div class="privacy-card">
-    <div class="privacy-header">
-        <i class="fas fa-shield-alt"></i>
-        <h1>Ochrana osobních údajů</h1>
-        <p style="color: var(--text-light);">Zásady zpracování osobních údajů a používání cookies</p>
-    </div>
+    <div class="about-container">
+        <div class="about-card">
+            <div class="about-header">
+                <i class="fas fa-user-circle"></i>
+                <h1>O mně</h1>
+                <p style="color: var(--text-light);">Kdo stojí za TechPrůvodce.cz</p>
+            </div>
 
-    <!-- SPRÁVCE -->
-    <div class="privacy-section">
-        <h2><i class="fas fa-user"></i> Správce osobních údajů</h2>
-        <p>
-            Správcem osobních údajů je provozovatel webu TechPrůvodce.cz.
-        </p>
-        <p>
-            Kontaktní email: <strong style="color:#fff;">krustdesing@gmail.com</strong>
-        </p>
-        <p>
-            Tento web je provozován fyzickou osobou nepodnikající.
-        </p>
-    </div>
+            <div class="about-section">
+                <h2><i class="fas fa-desktop"></i> Kdo jsem</h2>
+                <p>Jsem nadšenec do počítačů, her a technologií. Už od dob, kdy jsem si skládal své první PC z bazarových komponent, mě baví zkoumat, co v hardware doopravdy funguje a za co se vyplatí utrácet.</p>
+                <p>TechPrůvodce.cz je můj osobní projekt, který dělám ve volném čase. Žádná firma, žádný tým, žádný investor. Jen já, počítač a snaha pomoct lidem se vyznat v záplavě grafických karet, procesorů a herních sestav.</p>
+            </div>
 
-    <!-- TECHNICKÉ ÚDAJE -->
-    <div class="privacy-section">
-        <h2><i class="fas fa-server"></i> Technické údaje a provoz webu</h2>
-        <p>
-            Při návštěvě webu dochází k automatickému zpracování technických údajů,
-            zejména IP adresy, informací o prohlížeči a přístupových logů serveru.
-        </p>
-        <p>
-            Účelem je zajištění bezpečnosti a technického fungování webu.
-        </p>
-        <p>
-            Právní základ: oprávněný zájem správce dle čl. 6 odst. 1 písm. f) GDPR.
-        </p>
-        <p>
-            Doba uchování: dle nastavení poskytovatele hostingu (obvykle v řádu dnů až týdnů).
-        </p>
-    </div>
+            <div class="about-section">
+                <h2><i class="fas fa-bullseye"></i> O čem to teda je?</h2>
+                <p>Všechny články píšu na základě vlastních zkušeností, testování a reálných dat. Nesnažím se prodávat, ale vysvětlit. Články vychází z kombinace vlastních zkušeností, veřejně dostupných testů a technických dat.</p>
+                <p>Najdeš tu:</p>
+                <ul>
+                    <li>🔧 návody na stavbu PC krok za krokem</li>
+                    <li>💰 srovnání poměru cena/výkon</li>
+                    <li>🎮 reálné herní testy</li>
+                    <li>🤖 přehledně zpracované novinky jako DLSS, Frame Generation a AI</li>
+                </ul>
+            </div>
 
-    <!-- ZPRACOVATEL -->
-    <div class="privacy-section">
-        <h2><i class="fas fa-building"></i> Zpracovatelé osobních údajů</h2>
-        <p>
-            Web je provozován prostřednictvím hostingového poskytovatele,
-            který může mít přístup k technickým údajům (IP adresy, logy)
-            výhradně za účelem zajištění provozu serveru.
-        </p>
-        <p>
-            Hostingová společnost vystupuje jako zpracovatel osobních údajů.
-        </p>
-    </div>
+            <div class="about-section">
+                <h2><i class="fas fa-hand-peace"></i> Proč to dělám?</h2>
+                <p>Protože mě to baví. A protože vím, jak těžké je vybrat si dobrý hardware, když člověk není profík. Když jsem začínal, platil jsem za chyby – dnes se s vámi dělím o to, co jsem se naučil.</p>
+                <p>Web není komerční projekt. Pokud se mi v budoucnu podaří na něj dát reklamy, které ho udrží v chodu, super. Pokud ne, budu psát dál tak jako tak.</p>
+            </div>
 
-    <!-- AKTUÁLNÍ STAV -->
-    <div class="privacy-section">
-        <h2><i class="fas fa-clock"></i> Aktuální stav webu</h2>
-        <p><strong>Web v současné době nepoužívá žádné analytické ani marketingové nástroje.</strong></p>
-        <ul>
-            <li>❌ Žádné reklamní systémy</li>
-            <li>❌ Žádné analytické nástroje</li>
-            <li>❌ Žádné marketingové cookies</li>
-            <li>❌ Žádné sledovací pixely</li>
-        </ul>
-    </div>
+            <div class="contact-box">
+                <h3><i class="fas fa-envelope"></i> Kontakt</h3>
+                <p style="margin-bottom: 5px;">Máš dotaz, nápad, nebo sis všiml chyby?</p>
+                <p style="font-size: 1.2rem; font-weight: bold; color: #fff;">📧 krustdesing@gmail.com</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-light);">Odpovídám, jak mi to čas dovolí – obvykle do pár dní. Díky za trpělivost!</p>
+            </div>
 
-    <!-- COOKIES -->
-    <div class="privacy-section">
-        <h2><i class="fas fa-cookie"></i> Cookies</h2>
-        <p>
-            Web aktuálně nepoužívá marketingové ani analytické cookies.
-        </p>
-        <p>
-            Mohou být používány pouze technické cookies nezbytné pro
-            správné fungování webu (například v rámci hostingu).
-        </p>
-        <p>
-            V případě budoucího nasazení analytických nebo reklamních nástrojů
-            bude vždy vyžadován váš aktivní souhlas prostřednictvím cookie banneru.
-        </p>
-    </div>
-
-    <!-- BUDOUCÍ SLUŽBY -->
-    <div class="privacy-section">
-        <h2><i class="fas fa-code-branch"></i> Možné budoucí využití služeb třetích stran</h2>
-        <p>
-            V budoucnu může dojít k využití služeb jako 
-            Google Analytics nebo Google AdSense.
-        </p>
-        <p>
-            V takovém případě bude zpracování probíhat pouze na základě
-            vašeho výslovného souhlasu.
-        </p>
-        <p>
-            Tyto služby mohou znamenat předávání údajů do třetích zemí (např. USA)
-            na základě standardních smluvních doložek dle GDPR.
-        </p>
-    </div>
-
-    <!-- PRÁVA -->
-    <div class="privacy-section">
-        <h2><i class="fas fa-gavel"></i> Vaše práva</h2>
-        <ul>
-            <li>Právo na přístup k údajům</li>
-            <li>Právo na opravu nepřesných údajů</li>
-            <li>Právo na výmaz</li>
-            <li>Právo vznést námitku proti zpracování</li>
-            <li>Právo na omezení zpracování</li>
-            <li>Právo podat stížnost u dozorového úřadu</li>
-        </ul>
-        <p>
-            Dozorovým orgánem v České republice je 
-            Úřad pro ochranu osobních údajů.
-        </p>
-    </div>
-
-    <!-- KONTAKT -->
-    <div class="contact-privacy">
-        <h3 style="color: var(--primary); margin-bottom: 15px;">
-            <i class="fas fa-envelope"></i> Kontakt
-        </h3>
-        <p>
-            Veškeré žádosti týkající se ochrany osobních údajů zasílejte na:
-        </p>
-        <p style="font-size: 1.2rem; font-weight: bold; color: #fff;">
-            krustdesing@gmail.com
-        </p>
-    </div>
-
-    <p style="text-align: center; margin-top: 40px; color: var(--text-light); font-size: 0.9rem;">
-        Poslední aktualizace: únor 2026
-    </p>
-</div>
+            <p style="text-align: center; margin-top: 40px; color: var(--text-light);">
+                <i class="fas fa-heart" style="color: var(--primary);"></i> Děkuji, že čteš.
+            </p>
+        </div>
     </div>
 
     <!-- FOOTER -->
     <footer>
         <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h3>TechPrůvodce.cz</h3>
-                <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
-               
-            </div>
-            <div class="footer-col">
-                <h3>Rychlé odkazy</h3>
-                <ul>
-                    <li><a href="../index.html">Domů</a></li>
-                        <li><a href="../clanky/sestavy.html">PC Sestavy</a></li>
-                        <li><a href="../clanky/pc_25tisic.html">PC za 25 000 Kč</a></li>
-                        <li><a href="../clanky/fps_tips.html">FPS Tipy</a></li>
-                        <li><a href="../clanky/notebooky.html">TOP 5 herních notebooků</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Právní informace</h3>
-                <ul>
-                    <li><a href="../o_mne.html">O mně</a></li>
-                    <li><a href="../ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
-                    <li><a href="../podminky_pouziti.html">Podmínky použití</a></li>
-                    <li><a href="../disclaimer.html">Disclaimer</a></li>
-                <!--<li><a href="../cookies.html">Cookies</a></li>-->
-                </ul>
-            </div>
-             <div class="footer-col">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>TechPrůvodce.cz</h3>
+                    <p>Nejnovější recenze hardware, návody na sestavení PC a tipy pro hráče. Provozováno nadšenci pro nadšence od roku 2023.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html">Domů</a></li>
+                        <li><a href="clanky/sestavy.html">PC Sestavy</a></li>
+                        <li><a href="clanky/pc_25tisic.html">PC za 25 000 Kč</a></li>
+                        <li><a href="clanky/fps_tips.html">FPS Tipy</a></li>
+                        <li><a href="clanky/notebooky.html">TOP 5 herních notebooků</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Právní informace</h3>
+                    <ul>
+                        <li><a href="o_mne.html">O mně</a></li>
+                        <li><a href="ochrana_osobnich_udaju.html">Ochrana osobních údajů</a></li>
+                        <li><a href="podminky_pouziti.html">Podmínky použití</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
                     <h3>Kontakt</h3>
                     <div style="display: flex; gap: 15px; font-size: 1.5rem; margin-top: 20px;">
                         
@@ -288,15 +471,77 @@
                     <p style="margin-top: 20px; font-size: 0.9rem; color: #95a5a6;">
                         <i class="fas fa-envelope"></i> krustdesing@gmail.com<br>
                     </p>
-             </div>  
+                </div>  
+            </div>
         </div>
-        <!--
-        <div class="copyright">
-            <p>&copy; 2026 TechPrůvodce.cz – Všechna práva vyhrazena. | 
-            <strong>Upozornění:</strong> Tento web obsahuje affiliate odkazy. Nákupem přes ně podpoříte provoz webu bez navýšení ceny pro vás.</p>
-        </div>
-        -->
-    </div>
     </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Menu Toggle - OPRAVENÁ VERZE
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const menuIcon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mainNav.classList.toggle('show');
+            
+            // Změna ikony (hamburger -> close)
+            if (mainNav.classList.contains('show')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Zavření menu po kliknutí na odkaz
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Zavření menu po kliknutí mimo
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuBtn.contains(e.target) && mainNav.classList.contains('show')) {
+                mainNav.classList.remove('show');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Adjust menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mainNav.classList.remove('show');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            }
+        });
+    </script>
 </body>
 </html>

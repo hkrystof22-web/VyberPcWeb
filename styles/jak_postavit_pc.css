@@ -1,4 +1,4 @@
- /* ===== CSS VARIABLES (TMavý styl) ===== */
+/* ===== CSS VARIABLES (TMavý styl) ===== */
         :root {
             --primary: #00b894;
             --secondary: #0984e3;
@@ -578,6 +578,94 @@
             transform: translateY(-5px);
         }
 
+        /* ===== MOBILE MENU STYLY ===== */
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(18, 18, 18, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav.show {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 12px;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            nav ul li a:hover {
+                background: var(--primary);
+                color: #000;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .hero {
+                margin-top: 80px;
+                padding: 40px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .article-section {
+                padding: 25px;
+            }
+            
+            .step:before {
+                left: -15px;
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .components-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 992px) {
             .main-wrapper {
@@ -594,44 +682,6 @@
             }
             .checker-grid {
                 grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
-            .header-container {
-                padding: 0 15px;
-            }
-            .hero {
-                margin-top: 80px;
-                padding: 40px 20px;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .meta {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .article-section {
-                padding: 25px;
-            }
-            .step:before {
-                left: -15px;
-                width: 30px;
-                height: 30px;
-                font-size: 1rem;
-            }
-            .tools-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .components-table {
-                display: block;
-                overflow-x: auto;
             }
         }
         @media (max-width: 480px) {
